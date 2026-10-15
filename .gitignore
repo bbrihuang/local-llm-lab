@@ -224,3 +224,4 @@ __marimo__/
 *.safetensors
 *.bin
 models/
+.venv/
