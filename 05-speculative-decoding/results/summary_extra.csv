@@ -1,0 +1,7 @@
+label,prompt,tok_s,speedup,accept_pct
+u1_d4_pmin07,code,92.0,0.92,86.5
+u1_d4_pmin07,facts,77.6,0.74,82.3
+u1_d4_pmin07,story,63.3,0.59,77.2
+u1_ngram,code,102.9,1.03,
+u1_ngram,facts,108.1,1.02,
+u1_ngram,story,107.6,1.0,
