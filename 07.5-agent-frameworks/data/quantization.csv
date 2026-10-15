@@ -1,0 +1,7 @@
+format,imatrix,size_gib,generation_tok_s,perplexity,kl_divergence,same_top_token_pct
+F16,no,8.06,64.6,9.74,0.000,100.0
+Q8_0,no,4.28,108.6,9.73,0.003,97.9
+Q4_K_M,no,2.58,150.9,10.16,0.043,90.8
+Q4_K_M,yes,2.58,,9.89,0.026,92.6
+Q2_K,no,1.81,180.9,25.50,1.052,56.7
+Q2_K,yes,1.81,,11.93,0.251,77.3

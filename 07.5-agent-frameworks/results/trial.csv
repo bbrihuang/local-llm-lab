@@ -1,0 +1,2 @@
+framework,task,kind,repeat,correct,seconds,llm_calls,prompt_tokens,completion_tokens,tool_calls,error,answer
+plain,t01,calculator,1,1,1.09,2,675,64,1,,"17.5% of 2,348 is 410.9. Final answer: 410.9"

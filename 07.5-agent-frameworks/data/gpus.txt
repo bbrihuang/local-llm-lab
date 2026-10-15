@@ -1,0 +1,6 @@
+GPU notes
+
+RTX 5070 (my PC): 12 GB of GDDR7 memory, about 672 GB/s of memory bandwidth.
+Tesla T4 (free Colab): 16 GB of GDDR6 memory, about 320 GB/s of memory bandwidth.
+Generating one token means reading every weight once, so the most tokens per second
+a GPU can generate is roughly its memory bandwidth divided by the model's size.

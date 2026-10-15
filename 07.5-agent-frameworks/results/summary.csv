@@ -1,0 +1,6 @@
+framework,lines_of_code,correct,correct_automatic,runs,errors,median_seconds,llm_calls,tool_calls,prompt_tokens,completion_tokens,no_tools_tokens_per_request
+plain,30,24,24,30,0,0.96,2.4,1.4,1032,82,303
+langgraph,9,24,24,30,0,0.99,2.7,1.7,1385,88,376
+openai_agents,10,24,26,30,0,1.07,2.8,1.8,1570,99,424
+pydantic_ai,9,23,23,30,0,0.94,2.7,1.7,1422,83,384
+smolagents,7,7,7,30,21,52.92,6.07,1.5,22128,4178,3107
