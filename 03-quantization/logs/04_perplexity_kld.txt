@@ -1,0 +1,734 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\brian> dir ~\models
+
+
+    Directory: C:\Users\brian\models
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        10/14/2026  10:06 PM                .cache
+-a----        10/14/2026  10:07 PM     1834426016 Qwen3-1.7B-Q8_0.
+                                                  gguf
+-a----        10/14/2026  11:30 PM     8665620320 Qwen3.5-4B-F16.g
+                                                  guf
+-a----        10/14/2026  11:32 PM     1959167840 Qwen3.5-4B-Q2_K.
+                                                  gguf
+-a----        10/14/2026  11:35 PM     2783446880 Qwen3.5-4B-Q4_K_
+                                                  M.gguf
+-a----        10/14/2026  11:36 PM     4610580320 Qwen3.5-4B-Q8_0.
+                                                  gguf
+
+
+PS C:\Users\brian> dir ~\tools\llama.cpp\llama-*.exe
+
+
+    Directory: C:\Users\brian\tools\llama.cpp
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10/14/2026  10:01 PM           9216 llama-batched-be
+                                                  nch.exe
+-a----        10/14/2026  10:01 PM           9216 llama-bench.exe
+-a----        10/14/2026  10:01 PM           9216 llama-cli.exe
+-a----        10/14/2026  10:01 PM           9216 llama-completion
+                                                  .exe
+-a----        10/14/2026  10:01 PM           9216 llama-fit-params
+                                                  .exe
+-a----        10/14/2026  10:01 PM          27136 llama-gemma3-cli
+                                                  .exe
+-a----        10/14/2026  10:01 PM          60416 llama-gguf-split
+                                                  .exe
+-a----        10/14/2026  10:01 PM         252416 llama-imatrix.ex
+                                                  e
+-a----        10/14/2026  10:01 PM          27136 llama-llava-cli.
+                                                  exe
+-a----        10/14/2026  10:01 PM          27136 llama-minicpmv-c
+                                                  li.exe
+-a----        10/14/2026  10:01 PM          92672 llama-mtmd-cli.e
+                                                  xe
+-a----        10/14/2026  10:01 PM          55808 llama-mtmd-debug
+                                                  .exe
+-a----        10/14/2026  10:01 PM           9216 llama-perplexity
+                                                  .exe
+-a----        10/14/2026  10:01 PM           9216 llama-quantize.e
+                                                  xe
+-a----        10/14/2026  10:01 PM          27136 llama-qwen2vl-cl
+                                                  i.exe
+-a----        10/14/2026  10:01 PM          46592 llama-results.ex
+                                                  e
+-a----        10/14/2026  10:01 PM           9216 llama-server.exe
+-a----        10/14/2026  10:01 PM          58880 llama-tokenize.e
+                                                  xe
+-a----        10/14/2026  10:01 PM          41984 llama-tts.exe
+
+
+PS C:\Users\brian> cd ~\models
+PS C:\Users\brian\models> nvidia-smi
+Wed Oct 14 23:53:58 2026
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 617.42                 KMD Version: 617.42        CUDA UMD Version: 13.4     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5070      WDDM  |   00000000:07:00.0  On |                  N/A |
+|  0%   52C    P0             33W /  250W |    1269MiB /  12227MiB |      2%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            8468    C+G   C:\Windows\explorer.exe               N/A      |
+|    0   N/A  N/A            8544    C+G   ...indows\System32\ShellHost.exe      N/A      |
+|    0   N/A  N/A            8784    C+G   ...2txyewy\CrossDeviceResume.exe      N/A      |
+|    0   N/A  N/A            9668    C+G   ...y\StartMenuExperienceHost.exe      N/A      |
+|    0   N/A  N/A            9676    C+G   ..._cw5n1h2txyewy\SearchHost.exe      N/A      |
+|    0   N/A  N/A            9948    C+G   ...cw5n1h2txyewy\WidgetBoard.exe      N/A      |
+|    0   N/A  N/A           11656    C+G   ...\cef.win64\steamwebhelper.exe      N/A      |
+|    0   N/A  N/A           12524    C+G   ...5n1h2txyewy\TextInputHost.exe      N/A      |
+|    0   N/A  N/A           12764    C+G   ...App_cw5n1h2txyewy\LockApp.exe      N/A      |
+|    0   N/A  N/A           12808    C+G   ...N\v5.1.8\ProtonVPN.Client.exe      N/A      |
+|    0   N/A  N/A           13184    C+G   ....0.4283.45\msedgewebview2.exe      N/A      |
+|    0   N/A  N/A           14916    C+G   ...Lunar Client\Lunar Client.exe      N/A      |
+|    0   N/A  N/A           18148    C+G   ..._pzs8sxrjxfjjc\app\claude.exe      N/A      |
+|    0   N/A  N/A           18696    C+G   C:\Windows\explorer.exe               N/A      |
+|    0   N/A  N/A           19176    C+G   ...cord\app-1.0.9261\Discord.exe      N/A      |
+|    0   N/A  N/A           20776    C+G   ...x40ttqa\iCloud\iCloudHome.exe      N/A      |
+|    0   N/A  N/A           21396    C+G   ..._pzs8sxrjxfjjc\app\claude.exe      N/A      |
+|    0   N/A  N/A           21860    C+G   ...yb3d8bbwe\WindowsTerminal.exe      N/A      |
+|    0   N/A  N/A           22284    C+G   ...p\frontend\Docker Desktop.exe      N/A      |
+|    0   N/A  N/A           23596    C+G   ...xyewy\ShellExperienceHost.exe      N/A      |
+|    0   N/A  N/A           28520    C+G   ...Chrome\Application\chrome.exe      N/A      |
+|    0   N/A  N/A           28712    C+G   ...Chrome\Application\chrome.exe      N/A      |
+|    0   N/A  N/A           29528    C+G   ...SnippingTool\SnippingTool.exe      N/A      |
+|    0   N/A  N/A           30792    C+G   ...Telegram Desktop\Telegram.exe      N/A      |
++-----------------------------------------------------------------------------------------+
+PS C:\Users\brian\models> ~\tools\llama.cpp\llama-bench.exe -ngl 99 -r 3 -p 512 -n 128 -m Qwen3.5-4B-Q8_0.gguf -m Qwen3.5-4B-Q4_K_M.gguf -m Qwen3.5-4B-Q2_K.gguf
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 12199 MiB):
+  Device 0: NVIDIA GeForce RTX 5070, compute capability 12.0, VMM: yes, VRAM: 12199 MiB
+load_backend: loaded CUDA backend from C:\Users\brian\tools\llama.cpp\ggml-cuda.dll
+load_backend: loaded RPC backend from C:\Users\brian\tools\llama.cpp\ggml-rpc.dll
+load_backend: loaded CPU backend from C:\Users\brian\tools\llama.cpp\ggml-cpu-haswell.dll
+| model                          |       size |     params | backend    | ngl |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --------------: | -------------------: |
+| qwen35 4B Q8_0                 |   4.28 GiB |     4.33 B | CUDA       |  99 |           pp512 |     2214.80 ± 491.43 |
+| qwen35 4B Q8_0                 |   4.28 GiB |     4.33 B | CUDA       |  99 |           tg128 |        108.59 ± 1.56 |
+| qwen35 4B Q4_K - Medium        |   2.58 GiB |     4.33 B | CUDA       |  99 |           pp512 |     6813.27 ± 595.34 |
+| qwen35 4B Q4_K - Medium        |   2.58 GiB |     4.33 B | CUDA       |  99 |           tg128 |        150.94 ± 0.68 |
+| qwen35 4B Q2_K - Medium        |   1.81 GiB |     4.33 B | CUDA       |  99 |           pp512 |     5809.25 ± 296.60 |
+| qwen35 4B Q2_K - Medium        |   1.81 GiB |     4.33 B | CUDA       |  99 |           tg128 |        180.93 ± 0.51 |
+
+build: 6868a52cb (11630)
+PS C:\Users\brian\models> ~\tools\llama.cpp\llama-bench.exe -ngl 99 -r 3 -p 512 -n 128 -m Qwen3.5-4B-F16.gguf
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 12199 MiB):
+  Device 0: NVIDIA GeForce RTX 5070, compute capability 12.0, VMM: yes, VRAM: 12199 MiB
+load_backend: loaded CUDA backend from C:\Users\brian\tools\llama.cpp\ggml-cuda.dll
+load_backend: loaded RPC backend from C:\Users\brian\tools\llama.cpp\ggml-rpc.dll
+load_backend: loaded CPU backend from C:\Users\brian\tools\llama.cpp\ggml-cpu-haswell.dll
+| model                          |       size |     params | backend    | ngl |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | --: | --------------: | -------------------: |
+| qwen35 4B F16                  |   8.06 GiB |     4.33 B | CUDA       |  99 |           pp512 |     4199.48 ± 639.08 |
+| qwen35 4B F16                  |   8.06 GiB |     4.33 B | CUDA       |  99 |           tg128 |         64.64 ± 0.22 |
+
+build: 6868a52cb (11630)
+PS C:\Users\brian\models> Invoke-WebRequest https://huggingface.co/datasets/ggml-org/ci/resolve/main/wikitext-2-raw-v1.zip -OutFile wikitext-2-raw-v1.zip
+PS C:\Users\brian\models> Expand-Archive wikitext-2-raw-v1.zip -DestinationPath .
+PS C:\Users\brian\models> dir wikitext-2-raw
+
+
+    Directory: C:\Users\brian\models\wikitext-2-raw
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         8/15/2016  11:44 AM        1290590 wiki.test.raw
+-a----         8/15/2016  11:44 AM       10940747 wiki.train.raw
+-a----         8/15/2016  11:44 AM        1146846 wiki.valid.raw
+
+
+PS C:\Users\brian\models> Get-PSDrive C
+
+Name           Used (GB)     Free (GB) Provider      Root
+----           ---------     --------- --------      ----
+C                 319.19        611.24 FileSystem    C:\
+
+
+PS C:\Users\brian\models> ~\tools\llama.cpp\llama-perplexity.exe -m Qwen3.5-4B-F16.gguf -f wikitext-2-raw\wiki.test.raw -ngl 99 --chunks 100 --kl-divergence-base f16_logits.kld
+0.01.892.513 W model has unused tensor blk.32.attn_norm.weight (size = 10240 bytes) -- ignoring
+0.01.892.527 W model has unused tensor blk.32.post_attention_norm.weight (size = 10240 bytes) -- ignoring
+0.01.892.550 W model has unused tensor blk.32.attn_q.weight (size = 41943040 bytes) -- ignoring
+0.01.892.559 W model has unused tensor blk.32.attn_k.weight (size = 5242880 bytes) -- ignoring
+0.01.892.567 W model has unused tensor blk.32.attn_v.weight (size = 5242880 bytes) -- ignoring
+0.01.892.596 W model has unused tensor blk.32.attn_output.weight (size = 20971520 bytes) -- ignoring
+0.01.892.604 W model has unused tensor blk.32.attn_q_norm.weight (size = 1024 bytes) -- ignoring
+0.01.892.612 W model has unused tensor blk.32.attn_k_norm.weight (size = 1024 bytes) -- ignoring
+0.01.892.620 W model has unused tensor blk.32.ffn_gate.weight (size = 47185920 bytes) -- ignoring
+0.01.892.629 W model has unused tensor blk.32.ffn_down.weight (size = 47185920 bytes) -- ignoring
+0.01.892.636 W model has unused tensor blk.32.ffn_up.weight (size = 47185920 bytes) -- ignoring
+0.01.892.645 W model has unused tensor blk.32.nextn.eh_proj.weight (size = 26214400 bytes) -- ignoring
+0.01.892.654 W model has unused tensor blk.32.nextn.enorm.weight (size = 10240 bytes) -- ignoring
+0.01.892.663 W model has unused tensor blk.32.nextn.hnorm.weight (size = 10240 bytes) -- ignoring
+0.01.892.688 W model has unused tensor blk.32.nextn.shared_head_norm.weight (size = 10240 bytes) -- ignoring
+0.13.450.545 I cmn          init: llama threadpool init, n_threads = 8
+0.13.648.534 I
+0.13.650.662 I system_info: n_threads = 8 (n_threads_batch = 8) / 16 | CUDA : ARCHS = 750,800,860,890,900,1200,1210 | USE_GRAPHS = 1 | FA_QUANTS = q4_0-q4_0,q8_0-q8_0,f16-f16,bf16-bf16 | BLACKWELL_NATIVE_FP4 = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 |
+0.13.657.190 I perplexity: saving all logits to f16_logits.kld
+0.13.657.207 I perplexity: tokenizing the input ..
+0.14.537.661 I perplexity: tokenization took 880.433 ms
+0.14.538.664 I perplexity: calculating perplexity over 100 chunks, n_ctx=512, batch_size=2048, n_seq=4
+PS C:\Users\brian\models> ~\tools\llama.cpp\llama-perplexity.exe -m Qwen3.5-4B-F16.gguf -f wikitext-2-raw\wiki.test.raw -ngl 99 --chunks 100 --kl-divergence-base f16_logits.kld -b 512
+0.01.666.484 W model has unused tensor blk.32.attn_norm.weight (size = 10240 bytes) -- ignoring
+0.01.666.499 W model has unused tensor blk.32.post_attention_norm.weight (size = 10240 bytes) -- ignoring
+0.01.666.521 W model has unused tensor blk.32.attn_q.weight (size = 41943040 bytes) -- ignoring
+0.01.666.529 W model has unused tensor blk.32.attn_k.weight (size = 5242880 bytes) -- ignoring
+0.01.666.539 W model has unused tensor blk.32.attn_v.weight (size = 5242880 bytes) -- ignoring
+0.01.666.578 W model has unused tensor blk.32.attn_output.weight (size = 20971520 bytes) -- ignoring
+0.01.666.586 W model has unused tensor blk.32.attn_q_norm.weight (size = 1024 bytes) -- ignoring
+0.01.666.594 W model has unused tensor blk.32.attn_k_norm.weight (size = 1024 bytes) -- ignoring
+0.01.666.602 W model has unused tensor blk.32.ffn_gate.weight (size = 47185920 bytes) -- ignoring
+0.01.666.610 W model has unused tensor blk.32.ffn_down.weight (size = 47185920 bytes) -- ignoring
+0.01.666.617 W model has unused tensor blk.32.ffn_up.weight (size = 47185920 bytes) -- ignoring
+0.01.666.626 W model has unused tensor blk.32.nextn.eh_proj.weight (size = 26214400 bytes) -- ignoring
+0.01.666.634 W model has unused tensor blk.32.nextn.enorm.weight (size = 10240 bytes) -- ignoring
+0.01.666.642 W model has unused tensor blk.32.nextn.hnorm.weight (size = 10240 bytes) -- ignoring
+0.01.666.667 W model has unused tensor blk.32.nextn.shared_head_norm.weight (size = 10240 bytes) -- ignoring
+0.15.186.206 I cmn          init: llama threadpool init, n_threads = 8
+0.15.373.277 I
+0.15.375.792 I system_info: n_threads = 8 (n_threads_batch = 8) / 16 | CUDA : ARCHS = 750,800,860,890,900,1200,1210 | USE_GRAPHS = 1 | FA_QUANTS = q4_0-q4_0,q8_0-q8_0,f16-f16,bf16-bf16 | BLACKWELL_NATIVE_FP4 = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 |
+0.15.381.297 I perplexity: saving all logits to f16_logits.kld
+0.15.381.316 I perplexity: tokenizing the input ..
+0.16.187.560 I perplexity: tokenization took 806.227 ms
+0.16.188.270 I perplexity: calculating perplexity over 100 chunks, n_ctx=512, batch_size=512, n_seq=1
+0.16.310.216 E ggml_backend_cpu_buffer_type_alloc_buffer: failed to allocate buffer of size 254279680
+0.16.310.236 E output_reserve: failed to allocate output buffer of size 242.50 MiB
+0.16.310.238 E decode: could not reserve space for batch with 256 outputs
+0.16.310.260 I perplexity : failed to decode
+
+PS C:\Users\brian\models> ~\tools\llama.cpp\llama-perplexity.exe -m Qwen3.5-4B-F16.gguf -f wikitext-2-raw\wiki.test.raw -ngl 99 --chunks 100 --kl-divergence-base f16_logits.kld -b 512
+0.01.361.111 W model has unused tensor blk.32.attn_norm.weight (size = 10240 bytes) -- ignoring
+0.01.361.125 W model has unused tensor blk.32.post_attention_norm.weight (size = 10240 bytes) -- ignoring
+0.01.361.148 W model has unused tensor blk.32.attn_q.weight (size = 41943040 bytes) -- ignoring
+0.01.361.157 W model has unused tensor blk.32.attn_k.weight (size = 5242880 bytes) -- ignoring
+0.01.361.165 W model has unused tensor blk.32.attn_v.weight (size = 5242880 bytes) -- ignoring
+0.01.361.194 W model has unused tensor blk.32.attn_output.weight (size = 20971520 bytes) -- ignoring
+0.01.361.203 W model has unused tensor blk.32.attn_q_norm.weight (size = 1024 bytes) -- ignoring
+0.01.361.212 W model has unused tensor blk.32.attn_k_norm.weight (size = 1024 bytes) -- ignoring
+0.01.361.219 W model has unused tensor blk.32.ffn_gate.weight (size = 47185920 bytes) -- ignoring
+0.01.361.228 W model has unused tensor blk.32.ffn_down.weight (size = 47185920 bytes) -- ignoring
+0.01.361.235 W model has unused tensor blk.32.ffn_up.weight (size = 47185920 bytes) -- ignoring
+0.01.361.244 W model has unused tensor blk.32.nextn.eh_proj.weight (size = 26214400 bytes) -- ignoring
+0.01.361.252 W model has unused tensor blk.32.nextn.enorm.weight (size = 10240 bytes) -- ignoring
+0.01.361.261 W model has unused tensor blk.32.nextn.hnorm.weight (size = 10240 bytes) -- ignoring
+0.01.361.287 W model has unused tensor blk.32.nextn.shared_head_norm.weight (size = 10240 bytes) -- ignoring
+0.12.639.201 I cmn          init: llama threadpool init, n_threads = 8
+0.12.932.550 I
+0.12.934.822 I system_info: n_threads = 8 (n_threads_batch = 8) / 16 | CUDA : ARCHS = 750,800,860,890,900,1200,1210 | USE_GRAPHS = 1 | FA_QUANTS = q4_0-q4_0,q8_0-q8_0,f16-f16,bf16-bf16 | BLACKWELL_NATIVE_FP4 = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 |
+0.12.940.375 I perplexity: saving all logits to f16_logits.kld
+0.12.940.412 I perplexity: tokenizing the input ..
+0.13.640.226 I perplexity: tokenization took 699.787 ms
+0.13.641.085 I perplexity: calculating perplexity over 100 chunks, n_ctx=512, batch_size=512, n_seq=1
+0.14.158.095 I perplexity: 0.41 seconds per pass - ETA 0.68 minutes
+[1]5.9685,[2]8.4869,[3]8.6269,[4]8.4885,[5]8.5838,[6]8.9232,[7]9.2544,[8]9.9977,[9]10.5848,[10]10.9693,[11]10.8436,[12]10.9815,[13]11.6048,[14]11.0120,[15]10.8362,[16]10.9709,[17]10.2552,[18]10.2767,[19]10.1827,[20]10.1372,[21]9.7835,[22]9.6798,[23]9.3297,[24]8.8844,[25]8.7200,[26]8.5002,[27]8.3427,[28]8.2464,[29]8.2204,[30]8.2046,[31]8.1348,[32]8.1436,[33]8.0917,[34]8.1675,[35]8.2586,[36]8.4362,[37]8.5407,[38]8.5402,[39]8.5467,[40]8.5938,[41]8.6362,[42]8.7034,[43]8.7184,[44]8.7128,[45]8.8127,[46]8.7632,[47]8.9140,[48]8.9932,[49]8.9022,[50]8.9578,[51]8.9600,[52]9.0069,[53]9.0497,[54]9.0912,[55]9.0732,[56]9.1096,[57]9.1351,[58]9.1327,[59]9.1430,[60]9.1781,[61]9.2148,[62]9.2794,[63]9.3239,[64]9.3812,[65]9.4679,[66]9.5256,[67]9.6396,[68]9.6649,[69]9.6701,[70]9.6429,[71]9.7226,[72]9.7325,[73]9.7748,[74]9.7700,[75]9.7524,[76]9.7328,[77]9.7659,[78]9.7637,[79]9.7149,[80]9.6757,[81]9.6504,[82]9.6807,[83]9.6979,[84]9.6870,[85]9.7236,[86]9.7697,[87]9.7766,[88]9.7818,[89]9.7266,[90]9.6911,[91]9.6893,[92]9.6767,[93]9.7183,[94]9.7329,[95]9.7476,[96]9.7411,[97]9.7432,[98]9.7108,[99]9.7047,[100]9.7353,
+0.39.959.857 I Final estimate: PPL = 9.7353 +/- 0.16525
+
+PS C:\Users\brian\models> ~\tools\llama.cpp\llama-perplexity.exe -m Qwen3.5-4B-Q8_0.gguf --kl-divergence-base f16_logits.kld --kl-divergence -ngl 99 -b 512
+0.01.336.753 W model has unused tensor blk.32.attn_norm.weight (size = 10240 bytes) -- ignoring
+0.01.336.769 W model has unused tensor blk.32.post_attention_norm.weight (size = 10240 bytes) -- ignoring
+0.01.336.796 W model has unused tensor blk.32.attn_q.weight (size = 22282240 bytes) -- ignoring
+0.01.336.805 W model has unused tensor blk.32.attn_k.weight (size = 2785280 bytes) -- ignoring
+0.01.336.814 W model has unused tensor blk.32.attn_v.weight (size = 2785280 bytes) -- ignoring
+0.01.336.848 W model has unused tensor blk.32.attn_output.weight (size = 11141120 bytes) -- ignoring
+0.01.336.857 W model has unused tensor blk.32.attn_q_norm.weight (size = 1024 bytes) -- ignoring
+0.01.336.866 W model has unused tensor blk.32.attn_k_norm.weight (size = 1024 bytes) -- ignoring
+0.01.336.876 W model has unused tensor blk.32.ffn_gate.weight (size = 25067520 bytes) -- ignoring
+0.01.336.886 W model has unused tensor blk.32.ffn_down.weight (size = 25067520 bytes) -- ignoring
+0.01.336.895 W model has unused tensor blk.32.ffn_up.weight (size = 25067520 bytes) -- ignoring
+0.01.336.906 W model has unused tensor blk.32.nextn.eh_proj.weight (size = 13926400 bytes) -- ignoring
+0.01.336.916 W model has unused tensor blk.32.nextn.enorm.weight (size = 10240 bytes) -- ignoring
+0.01.336.926 W model has unused tensor blk.32.nextn.hnorm.weight (size = 10240 bytes) -- ignoring
+0.01.336.956 W model has unused tensor blk.32.nextn.shared_head_norm.weight (size = 10240 bytes) -- ignoring
+0.05.567.406 I cmn          init: llama threadpool init, n_threads = 8
+0.05.720.692 I
+0.05.721.806 I system_info: n_threads = 8 (n_threads_batch = 8) / 16 | CUDA : ARCHS = 750,800,860,890,900,1200,1210 | USE_GRAPHS = 1 | FA_QUANTS = q4_0-q4_0,q8_0-q8_0,f16-f16,bf16-bf16 | BLACKWELL_NATIVE_FP4 = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 |
+0.05.783.303 I kl_divergence: computing over 100 chunks, n_ctx=512, batch_size=512, n_seq=1
+0.06.042.288 I kl_divergence: 0.26 seconds per pass - ETA 0.42 minutes
+
+chunk             PPL               ln(PPL(Q)/PPL(base))          KL Divergence              Δp RMS            Same top p
+   1       5.9734 ±    1.0051       0.00081 ±    0.00288       0.00095 ±    0.00014     0.787 ±  0.084 %    98.431 ±  0.780 %
+   2       8.4857 ±    1.0902       0.00086 ±    0.00255       0.00101 ±    0.00008     0.835 ±  0.063 %    98.039 ±  0.615 %
+   3       8.6196 ±    0.8786      -0.00019 ±    0.00223       0.00117 ±    0.00010     0.886 ±  0.053 %    97.908 ±  0.518 %
+   4       8.5010 ±    0.7239       0.00195 ±    0.00181       0.00113 ±    0.00008     0.930 ±  0.066 %    97.941 ±  0.445 %
+   5       8.5859 ±    0.6423       0.00064 ±    0.00162       0.00111 ±    0.00007     0.936 ±  0.056 %    97.961 ±  0.396 %
+   6       8.9270 ±    0.6065       0.00075 ±    0.00143       0.00110 ±    0.00006     0.938 ±  0.048 %    97.974 ±  0.360 %
+   7       9.2620 ±    0.5840       0.00126 ±    0.00134       0.00107 ±    0.00005     0.928 ±  0.043 %    97.815 ±  0.346 %
+   8      10.0167 ±    0.6068       0.00228 ±    0.00124       0.00106 ±    0.00004     0.904 ±  0.039 %    97.843 ±  0.322 %
+   9      10.6090 ±    0.6100       0.00262 ±    0.00116       0.00112 ±    0.00007     0.896 ±  0.037 %    97.865 ±  0.302 %
+  10      10.9933 ±    0.6002       0.00249 ±    0.00109       0.00110 ±    0.00006     0.874 ±  0.034 %    97.882 ±  0.285 %
+  11      10.8616 ±    0.5627       0.00193 ±    0.00103       0.00110 ±    0.00006     0.878 ±  0.032 %    97.825 ±  0.275 %
+  12      11.0034 ±    0.5478       0.00224 ±    0.00098       0.00111 ±    0.00005     0.890 ±  0.030 %    97.876 ±  0.261 %
+  13      11.6164 ±    0.5636       0.00122 ±    0.00099       0.00113 ±    0.00005     0.900 ±  0.029 %    97.858 ±  0.251 %
+  14      11.0290 ±    0.5133       0.00218 ±    0.00104       0.00112 ±    0.00005     0.900 ±  0.028 %    97.955 ±  0.237 %
+  15      10.8496 ±    0.4864       0.00184 ±    0.00124       0.00298 ±    0.00184     1.041 ±  0.103 %    97.908 ±  0.231 %
+  16      10.9819 ±    0.4810       0.00156 ±    0.00119       0.00289 ±    0.00173     1.041 ±  0.097 %    97.892 ±  0.225 %
+  17      10.2594 ±    0.4314       0.00094 ±    0.00137       0.00286 ±    0.00163     1.080 ±  0.097 %    97.924 ±  0.217 %
+  18      10.2823 ±    0.4194       0.00104 ±    0.00131       0.00282 ±    0.00154     1.075 ±  0.092 %    97.974 ±  0.208 %
+  19      10.1860 ±    0.4055       0.00080 ±    0.00126       0.00283 ±    0.00146     1.117 ±  0.096 %    97.915 ±  0.205 %
+  20      10.1418 ±    0.3926       0.00090 ±    0.00121       0.00276 ±    0.00139     1.106 ±  0.092 %    97.941 ±  0.199 %
+  21       9.7898 ±    0.3677       0.00107 ±    0.00116       0.00268 ±    0.00132     1.103 ±  0.088 %    97.983 ±  0.192 %
+  22       9.6871 ±    0.3550       0.00116 ±    0.00112       0.00261 ±    0.00126     1.103 ±  0.084 %    97.986 ±  0.188 %
+  23       9.3402 ±    0.3326       0.00152 ±    0.00108       0.00255 ±    0.00121     1.112 ±  0.080 %    97.988 ±  0.183 %
+  24       8.8968 ±    0.3072       0.00177 ±    0.00104       0.00248 ±    0.00115     1.105 ±  0.077 %    98.007 ±  0.179 %
+  25       8.7307 ±    0.2943       0.00160 ±    0.00101       0.00243 ±    0.00111     1.107 ±  0.074 %    97.992 ±  0.176 %
+  26       8.5093 ±    0.2790       0.00142 ±    0.00098       0.00237 ±    0.00107     1.101 ±  0.072 %    98.069 ±  0.169 %
+  27       8.3514 ±    0.2676       0.00137 ±    0.00095       0.00232 ±    0.00103     1.093 ±  0.070 %    98.068 ±  0.166 %
+  28       8.2552 ±    0.2592       0.00139 ±    0.00092       0.00227 ±    0.00099     1.087 ±  0.068 %    98.095 ±  0.162 %
+  29       8.2289 ±    0.2537       0.00174 ±    0.00097       0.00223 ±    0.00096     1.083 ±  0.066 %    98.107 ±  0.158 %
+  30       8.2147 ±    0.2488       0.00191 ±    0.00094       0.00219 ±    0.00092     1.077 ±  0.064 %    98.157 ±  0.154 %
+  31       8.1433 ±    0.2419       0.00172 ±    0.00092       0.00215 ±    0.00089     1.072 ±  0.062 %    98.178 ±  0.150 %
+  32       8.1511 ±    0.2384       0.00157 ±    0.00089       0.00214 ±    0.00087     1.079 ±  0.060 %    98.137 ±  0.150 %
+  33       8.0995 ±    0.2329       0.00159 ±    0.00087       0.00211 ±    0.00084     1.072 ±  0.059 %    98.158 ±  0.147 %
+  34       8.1743 ±    0.2320       0.00143 ±    0.00085       0.00208 ±    0.00082     1.066 ±  0.057 %    98.178 ±  0.144 %
+  35       8.2660 ±    0.2312       0.00148 ±    0.00083       0.00205 ±    0.00079     1.062 ±  0.056 %    98.196 ±  0.141 %
+  36       8.4443 ±    0.2334       0.00153 ±    0.00082       0.00204 ±    0.00077     1.064 ±  0.054 %    98.181 ±  0.139 %
+  37       8.5476 ±    0.2330       0.00136 ±    0.00080       0.00202 ±    0.00075     1.056 ±  0.053 %    98.188 ±  0.137 %
+  38       8.5472 ±    0.2296       0.00135 ±    0.00079       0.00201 ±    0.00073     1.053 ±  0.052 %    98.173 ±  0.136 %
+  39       8.5529 ±    0.2271       0.00125 ±    0.00078       0.00200 ±    0.00071     1.056 ±  0.052 %    98.160 ±  0.135 %
+  40       8.5988 ±    0.2264       0.00138 ±    0.00083       0.00209 ±    0.00070     1.170 ±  0.119 %    98.127 ±  0.134 %
+  41       8.6392 ±    0.2250       0.00112 ±    0.00082       0.00207 ±    0.00068     1.166 ±  0.116 %    98.144 ±  0.132 %
+  42       8.7060 ±    0.2242       0.00106 ±    0.00080       0.00205 ±    0.00067     1.158 ±  0.114 %    98.151 ±  0.130 %
+  43       8.7210 ±    0.2224       0.00103 ±    0.00079       0.00202 ±    0.00065     1.152 ±  0.112 %    98.158 ±  0.128 %
+  44       8.7142 ±    0.2195       0.00089 ±    0.00077       0.00200 ±    0.00064     1.148 ±  0.110 %    98.164 ±  0.127 %
+  45       8.8131 ±    0.2202       0.00076 ±    0.00076       0.00198 ±    0.00062     1.143 ±  0.108 %    98.135 ±  0.126 %
+  46       8.7626 ±    0.2160       0.00063 ±    0.00074       0.00196 ±    0.00061     1.140 ±  0.106 %    98.142 ±  0.125 %
+  47       8.9123 ±    0.2182       0.00049 ±    0.00073       0.00196 ±    0.00060     1.140 ±  0.104 %    98.139 ±  0.123 %
+  48       8.9920 ±    0.2182       0.00066 ±    0.00073       0.00195 ±    0.00058     1.143 ±  0.102 %    98.113 ±  0.123 %
+  49       8.9009 ±    0.2132       0.00063 ±    0.00072       0.00193 ±    0.00057     1.138 ±  0.100 %    98.079 ±  0.123 %
+  50       8.9574 ±    0.2127       0.00072 ±    0.00071       0.00192 ±    0.00056     1.134 ±  0.099 %    98.055 ±  0.122 %
+  51       8.9606 ±    0.2107       0.00094 ±    0.00071       0.00191 ±    0.00055     1.133 ±  0.097 %    98.078 ±  0.120 %
+  52       9.0074 ±    0.2101       0.00091 ±    0.00070       0.00189 ±    0.00054     1.129 ±  0.095 %    98.054 ±  0.120 %
+  53       9.0493 ±    0.2089       0.00080 ±    0.00069       0.00192 ±    0.00053     1.189 ±  0.102 %    98.032 ±  0.119 %
+  54       9.0908 ±    0.2079       0.00078 ±    0.00068       0.00191 ±    0.00052     1.183 ±  0.101 %    98.010 ±  0.119 %
+  55       9.0716 ±    0.2054       0.00064 ±    0.00068       0.00192 ±    0.00051     1.206 ±  0.100 %    97.989 ±  0.119 %
+  56       9.1080 ±    0.2045       0.00062 ±    0.00067       0.00191 ±    0.00050     1.201 ±  0.099 %    97.997 ±  0.117 %
+  57       9.1351 ±    0.2035       0.00079 ±    0.00066       0.00193 ±    0.00049     1.204 ±  0.097 %    97.998 ±  0.116 %
+  58       9.1325 ±    0.2013       0.00075 ±    0.00065       0.00191 ±    0.00048     1.199 ±  0.096 %    97.978 ±  0.116 %
+  59       9.1440 ±    0.1999       0.00087 ±    0.00065       0.00190 ±    0.00048     1.195 ±  0.094 %    97.999 ±  0.114 %
+  60       9.1789 ±    0.1992       0.00082 ±    0.00064       0.00189 ±    0.00047     1.190 ±  0.093 %    97.993 ±  0.113 %
+  61       9.2165 ±    0.1986       0.00091 ±    0.00063       0.00188 ±    0.00046     1.189 ±  0.092 %    98.001 ±  0.112 %
+  62       9.2809 ±    0.1983       0.00088 ±    0.00062       0.00187 ±    0.00045     1.184 ±  0.091 %    97.982 ±  0.112 %
+  63       9.3244 ±    0.1976       0.00076 ±    0.00061       0.00185 ±    0.00045     1.178 ±  0.090 %    97.977 ±  0.111 %
+  64       9.3828 ±    0.1974       0.00087 ±    0.00061       0.00184 ±    0.00044     1.176 ±  0.088 %    97.941 ±  0.111 %
+  65       9.4694 ±    0.1980       0.00084 ±    0.00060       0.00183 ±    0.00043     1.171 ±  0.087 %    97.955 ±  0.110 %
+  66       9.5275 ±    0.1980       0.00087 ±    0.00059       0.00182 ±    0.00043     1.167 ±  0.086 %    97.956 ±  0.109 %
+  67       9.6413 ±    0.1997       0.00087 ±    0.00059       0.00181 ±    0.00042     1.162 ±  0.085 %    97.951 ±  0.108 %
+  68       9.6664 ±    0.1988       0.00084 ±    0.00058       0.00180 ±    0.00041     1.158 ±  0.084 %    97.976 ±  0.107 %
+  69       9.6720 ±    0.1973       0.00087 ±    0.00057       0.00179 ±    0.00041     1.154 ±  0.084 %    97.988 ±  0.106 %
+  70       9.6441 ±    0.1951       0.00078 ±    0.00057       0.00177 ±    0.00040     1.151 ±  0.083 %    98.000 ±  0.105 %
+  71       9.7244 ±    0.1955       0.00084 ±    0.00056       0.00176 ±    0.00040     1.146 ±  0.082 %    98.001 ±  0.104 %
+  72       9.7345 ±    0.1941       0.00084 ±    0.00055       0.00175 ±    0.00039     1.142 ±  0.081 %    98.012 ±  0.103 %
+  73       9.7767 ±    0.1938       0.00082 ±    0.00055       0.00174 ±    0.00039     1.138 ±  0.080 %    97.996 ±  0.103 %
+  74       9.7708 ±    0.1924       0.00071 ±    0.00054       0.00174 ±    0.00038     1.142 ±  0.079 %    97.965 ±  0.103 %
+  75       9.7527 ±    0.1910       0.00065 ±    0.00054       0.00176 ±    0.00038     1.174 ±  0.081 %    97.966 ±  0.102 %
+  76       9.7353 ±    0.1895       0.00087 ±    0.00064       0.00215 ±    0.00048     1.321 ±  0.114 %    97.936 ±  0.102 %
+  77       9.7692 ±    0.1890       0.00094 ±    0.00063       0.00213 ±    0.00047     1.315 ±  0.113 %    97.927 ±  0.102 %
+  78       9.7667 ±    0.1883       0.00090 ±    0.00064       0.00222 ±    0.00047     1.384 ±  0.118 %    97.924 ±  0.101 %
+  79       9.7173 ±    0.1860       0.00089 ±    0.00063       0.00221 ±    0.00046     1.379 ±  0.117 %    97.940 ±  0.100 %
+  80       9.6772 ±    0.1838       0.00078 ±    0.00062       0.00219 ±    0.00046     1.373 ±  0.116 %    97.922 ±  0.100 %
+  81       9.6520 ±    0.1821       0.00079 ±    0.00062       0.00218 ±    0.00045     1.370 ±  0.115 %    97.923 ±  0.099 %
+  82       9.6826 ±    0.1816       0.00081 ±    0.00061       0.00217 ±    0.00045     1.365 ±  0.114 %    97.920 ±  0.099 %
+  83       9.7000 ±    0.1807       0.00083 ±    0.00061       0.00219 ±    0.00044     1.361 ±  0.112 %    97.888 ±  0.099 %
+  84       9.6889 ±    0.1793       0.00080 ±    0.00060       0.00218 ±    0.00044     1.360 ±  0.111 %    97.876 ±  0.099 %
+  85       9.7249 ±    0.1791       0.00072 ±    0.00059       0.00217 ±    0.00043     1.355 ±  0.110 %    97.882 ±  0.098 %
+  86       9.7710 ±    0.1792       0.00072 ±    0.00059       0.00216 ±    0.00043     1.350 ±  0.110 %    97.884 ±  0.097 %
+  87       9.7770 ±    0.1782       0.00062 ±    0.00058       0.00214 ±    0.00042     1.345 ±  0.109 %    97.881 ±  0.097 %
+  88       9.7821 ±    0.1775       0.00060 ±    0.00058       0.00213 ±    0.00042     1.341 ±  0.108 %    97.883 ±  0.096 %
+  89       9.7267 ±    0.1753       0.00057 ±    0.00057       0.00212 ±    0.00041     1.337 ±  0.107 %    97.872 ±  0.096 %
+  90       9.6913 ±    0.1735       0.00057 ±    0.00057       0.00210 ±    0.00041     1.333 ±  0.106 %    97.891 ±  0.095 %
+  91       9.6899 ±    0.1724       0.00061 ±    0.00056       0.00210 ±    0.00040     1.331 ±  0.105 %    97.884 ±  0.094 %
+  92       9.6759 ±    0.1712       0.00046 ±    0.00057       0.00264 ±    0.00066     1.475 ±  0.154 %    97.894 ±  0.094 %
+  93       9.7180 ±    0.1712       0.00051 ±    0.00056       0.00262 ±    0.00065     1.469 ±  0.153 %    97.913 ±  0.093 %
+  94       9.7333 ±    0.1705       0.00058 ±    0.00056       0.00263 ±    0.00064     1.466 ±  0.151 %    97.906 ±  0.092 %
+  95       9.7474 ±    0.1699       0.00051 ±    0.00055       0.00261 ±    0.00064     1.460 ±  0.150 %    97.903 ±  0.092 %
+  96       9.7413 ±    0.1688       0.00055 ±    0.00055       0.00260 ±    0.00063     1.461 ±  0.149 %    97.913 ±  0.091 %
+  97       9.7434 ±    0.1680       0.00055 ±    0.00055       0.00260 ±    0.00062     1.457 ±  0.147 %    97.906 ±  0.091 %
+  98       9.7106 ±    0.1664       0.00049 ±    0.00054       0.00260 ±    0.00062     1.457 ±  0.146 %    97.911 ±  0.090 %
+  99       9.7040 ±    0.1654       0.00044 ±    0.00054       0.00259 ±    0.00061     1.453 ±  0.145 %    97.928 ±  0.090 %
+ 100       9.7346 ±    0.1652       0.00043 ±    0.00053       0.00257 ±    0.00060     1.448 ±  0.144 %    97.925 ±  0.089 %
+
+====== Perplexity statistics ======
+Mean PPL(Q)                   :   9.734580 ±   0.165242
+Mean PPL(base)                :   9.730389 ±   0.164989
+Cor(ln(PPL(Q)), ln(PPL(base))):  99.95%
+Mean ln(PPL(Q)/PPL(base))     :   0.000431 ±   0.000534
+Mean PPL(Q)/PPL(base)         :   1.000431 ±   0.000535
+Mean PPL(Q)-PPL(base)         :   0.004191 ±   0.005205
+
+====== KL divergence statistics ======
+Mean    KLD:   0.002572 ±   0.000604
+Maximum KLD:  12.232067
+99.9%   KLD:   0.128028
+99.0%   KLD:   0.008829
+95.0%   KLD:   0.003375
+90.0%   KLD:   0.002351
+Median  KLD:   0.000799
+10.0%   KLD:   0.000046
+ 5.0%   KLD:   0.000012
+ 1.0%   KLD:  -0.000000
+ 0.1%   KLD:  -0.000018
+Minimum KLD:  -0.000099
+
+====== Token probability statistics ======
+Mean    Δp:  0.016 ± 0.009 %
+Maximum Δp: 91.469%
+99.9%   Δp:  7.939%
+99.0%   Δp:  2.934%
+95.0%   Δp:  1.463%
+90.0%   Δp:  0.895%
+75.0%   Δp:  0.196%
+Median  Δp:  0.000%
+25.0%   Δp: -0.194%
+10.0%   Δp: -0.884%
+ 5.0%   Δp: -1.431%
+ 1.0%   Δp: -2.873%
+ 0.1%   Δp: -6.704%
+Minimum Δp: -58.647%
+RMS Δp    :  1.448 ± 0.144 %
+Same top p: 97.925 ± 0.089 %
+
+PS C:\Users\brian\models> ~\tools\llama.cpp\llama-perplexity.exe -m Qwen3.5-4B-Q4_K_M.gguf --kl-divergence-base f16_logits.kld --kl-divergence -ngl 99 -b 512
+0.01.194.181 W model has unused tensor blk.32.attn_norm.weight (size = 10240 bytes) -- ignoring
+0.01.194.199 W model has unused tensor blk.32.post_attention_norm.weight (size = 10240 bytes) -- ignoring
+0.01.194.225 W model has unused tensor blk.32.attn_q.weight (size = 11796480 bytes) -- ignoring
+0.01.194.233 W model has unused tensor blk.32.attn_k.weight (size = 1474560 bytes) -- ignoring
+0.01.194.242 W model has unused tensor blk.32.attn_v.weight (size = 2150400 bytes) -- ignoring
+0.01.194.275 W model has unused tensor blk.32.attn_output.weight (size = 5898240 bytes) -- ignoring
+0.01.194.284 W model has unused tensor blk.32.attn_q_norm.weight (size = 1024 bytes) -- ignoring
+0.01.194.292 W model has unused tensor blk.32.attn_k_norm.weight (size = 1024 bytes) -- ignoring
+0.01.194.302 W model has unused tensor blk.32.ffn_gate.weight (size = 13271040 bytes) -- ignoring
+0.01.194.311 W model has unused tensor blk.32.ffn_down.weight (size = 19353600 bytes) -- ignoring
+0.01.194.320 W model has unused tensor blk.32.ffn_up.weight (size = 13271040 bytes) -- ignoring
+0.01.194.331 W model has unused tensor blk.32.nextn.eh_proj.weight (size = 7372800 bytes) -- ignoring
+0.01.194.340 W model has unused tensor blk.32.nextn.enorm.weight (size = 10240 bytes) -- ignoring
+0.01.194.350 W model has unused tensor blk.32.nextn.hnorm.weight (size = 10240 bytes) -- ignoring
+0.01.194.379 W model has unused tensor blk.32.nextn.shared_head_norm.weight (size = 10240 bytes) -- ignoring
+0.02.909.465 I cmn          init: llama threadpool init, n_threads = 8
+0.03.001.025 I
+0.03.001.083 I system_info: n_threads = 8 (n_threads_batch = 8) / 16 | CUDA : ARCHS = 750,800,860,890,900,1200,1210 | USE_GRAPHS = 1 | FA_QUANTS = q4_0-q4_0,q8_0-q8_0,f16-f16,bf16-bf16 | BLACKWELL_NATIVE_FP4 = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 |
+0.03.033.389 I kl_divergence: computing over 100 chunks, n_ctx=512, batch_size=512, n_seq=1
+0.03.221.391 I kl_divergence: 0.19 seconds per pass - ETA 0.30 minutes
+
+chunk             PPL               ln(PPL(Q)/PPL(base))          KL Divergence              Δp RMS            Same top p
+   1       6.2987 ±    1.0886       0.05383 ±    0.02538       0.04358 ±    0.00770     6.817 ±  1.407 %    91.765 ±  1.725 %
+   2       9.1125 ±    1.1959       0.07213 ±    0.02076       0.04405 ±    0.00525     6.449 ±  0.839 %    90.588 ±  1.294 %
+   3       8.9137 ±    0.9131       0.03336 ±    0.01603       0.04331 ±    0.00370     5.988 ±  0.616 %    90.980 ±  1.036 %
+   4       8.7732 ±    0.7497       0.03347 ±    0.01261       0.03923 ±    0.00284     5.541 ±  0.504 %    91.373 ±  0.880 %
+   5       8.8578 ±    0.6643       0.03181 ±    0.01057       0.03724 ±    0.00231     5.382 ±  0.423 %    91.373 ±  0.787 %
+   6       9.1928 ±    0.6258       0.03008 ±    0.00913       0.03538 ±    0.00195     5.119 ±  0.373 %    91.765 ±  0.703 %
+   7       9.5206 ±    0.6015       0.02880 ±    0.00814       0.03442 ±    0.00169     4.949 ±  0.333 %    91.429 ±  0.663 %
+   8      10.3215 ±    0.6254       0.03226 ±    0.00771       0.03479 ±    0.00153     4.899 ±  0.301 %    91.029 ±  0.633 %
+   9      10.8939 ±    0.6259       0.02913 ±    0.00712       0.03400 ±    0.00139     4.726 ±  0.278 %    91.111 ±  0.594 %
+  10      11.2806 ±    0.6159       0.02828 ±    0.00657       0.03312 ±    0.00126     4.634 ±  0.258 %    91.176 ±  0.562 %
+  11      11.1780 ±    0.5803       0.03065 ±    0.00620       0.03264 ±    0.00117     4.575 ±  0.239 %    91.301 ±  0.532 %
+  12      11.3433 ±    0.5660       0.03266 ±    0.00604       0.03371 ±    0.00117     4.706 ±  0.243 %    91.078 ±  0.515 %
+  13      11.9725 ±    0.5817       0.03142 ±    0.00581       0.03374 ±    0.00110     4.727 ±  0.232 %    91.011 ±  0.497 %
+  14      11.3840 ±    0.5308       0.03387 ±    0.00557       0.03426 ±    0.00108     4.866 ±  0.219 %    91.120 ±  0.476 %
+  15      11.2202 ±    0.5044       0.03543 ±    0.00546       0.04127 ±    0.00518     5.201 ±  0.313 %    91.111 ±  0.460 %
+  16      11.4389 ±    0.5028       0.04234 ±    0.00603       0.04456 ±    0.00509     5.474 ±  0.308 %    90.882 ±  0.451 %
+  17      10.6450 ±    0.4492       0.03784 ±    0.00596       0.04655 ±    0.00550     5.660 ±  0.348 %    90.888 ±  0.437 %
+  18      10.6523 ±    0.4358       0.03640 ±    0.00577       0.04709 ±    0.00522     5.852 ±  0.348 %    91.002 ±  0.422 %
+  19      10.5479 ±    0.4210       0.03571 ±    0.00558       0.04817 ±    0.00506     5.909 ±  0.335 %    91.166 ±  0.408 %
+  20      10.5036 ±    0.4078       0.03596 ±    0.00536       0.04747 ±    0.00481     5.864 ±  0.324 %    91.059 ±  0.400 %
+  21      10.1357 ±    0.3820       0.03580 ±    0.00519       0.04722 ±    0.00459     5.884 ±  0.309 %    90.999 ±  0.391 %
+  22      10.0190 ±    0.3684       0.03486 ±    0.00502       0.04677 ±    0.00438     5.850 ±  0.297 %    90.945 ±  0.383 %
+  23       9.6603 ±    0.3452       0.03522 ±    0.00484       0.04600 ±    0.00419     5.851 ±  0.287 %    91.049 ±  0.373 %
+  24       9.1803 ±    0.3181       0.03314 ±    0.00467       0.04534 ±    0.00402     5.885 ±  0.276 %    91.144 ±  0.363 %
+  25       9.0159 ±    0.3052       0.03374 ±    0.00459       0.04542 ±    0.00387     5.975 ±  0.269 %    91.184 ±  0.355 %
+  26       8.7930 ±    0.2897       0.03423 ±    0.00446       0.04489 ±    0.00372     5.952 ±  0.261 %    91.282 ±  0.346 %
+  27       8.6429 ±    0.2783       0.03568 ±    0.00435       0.04493 ±    0.00359     5.966 ±  0.254 %    91.242 ±  0.341 %
+  28       8.5402 ±    0.2695       0.03533 ±    0.00424       0.04455 ±    0.00347     5.942 ±  0.246 %    91.331 ±  0.333 %
+  29       8.5182 ±    0.2642       0.03630 ±    0.00416       0.04434 ±    0.00335     5.926 ±  0.239 %    91.318 ±  0.327 %
+  30       8.5013 ±    0.2590       0.03621 ±    0.00408       0.04396 ±    0.00324     5.872 ±  0.234 %    91.346 ±  0.321 %
+  31       8.4266 ±    0.2517       0.03590 ±    0.00399       0.04359 ±    0.00314     5.846 ±  0.228 %    91.410 ±  0.315 %
+  32       8.4359 ±    0.2483       0.03591 ±    0.00391       0.04375 ±    0.00304     5.871 ±  0.222 %    91.422 ±  0.310 %
+  33       8.3819 ±    0.2426       0.03586 ±    0.00383       0.04346 ±    0.00295     5.838 ±  0.217 %    91.444 ±  0.305 %
+  34       8.4681 ±    0.2420       0.03675 ±    0.00376       0.04312 ±    0.00286     5.815 ±  0.213 %    91.534 ±  0.299 %
+  35       8.5646 ±    0.2413       0.03696 ±    0.00368       0.04307 ±    0.00278     5.806 ±  0.208 %    91.507 ±  0.295 %
+  36       8.7481 ±    0.2436       0.03687 ±    0.00362       0.04323 ±    0.00271     5.791 ±  0.204 %    91.481 ±  0.291 %
+  37       8.8670 ±    0.2436       0.03805 ±    0.00359       0.04339 ±    0.00265     5.819 ±  0.205 %    91.447 ±  0.288 %
+  38       8.8701 ±    0.2402       0.03844 ±    0.00354       0.04320 ±    0.00258     5.791 ±  0.201 %    91.393 ±  0.285 %
+  39       8.8724 ±    0.2374       0.03792 ±    0.00349       0.04310 ±    0.00252     5.762 ±  0.197 %    91.433 ±  0.281 %
+  40       8.9272 ±    0.2369       0.03886 ±    0.00346       0.04317 ±    0.00246     5.755 ±  0.193 %    91.363 ±  0.278 %
+  41       8.9830 ±    0.2361       0.04015 ±    0.00343       0.04376 ±    0.00243     5.843 ±  0.200 %    91.306 ±  0.276 %
+  42       9.0600 ±    0.2355       0.04091 ±    0.00339       0.04366 ±    0.00238     5.803 ±  0.197 %    91.279 ±  0.273 %
+  43       9.0721 ±    0.2336       0.04050 ±    0.00334       0.04341 ±    0.00232     5.785 ±  0.194 %    91.254 ±  0.270 %
+  44       9.0658 ±    0.2306       0.04044 ±    0.00330       0.04326 ±    0.00227     5.760 ±  0.190 %    91.283 ±  0.266 %
+  45       9.1837 ±    0.2318       0.04194 ±    0.00328       0.04336 ±    0.00222     5.770 ±  0.188 %    91.163 ±  0.265 %
+  46       9.1347 ±    0.2276       0.04222 ±    0.00327       0.04360 ±    0.00220     5.823 ±  0.189 %    91.168 ±  0.262 %
+  47       9.2995 ±    0.2302       0.04301 ±    0.00324       0.04360 ±    0.00215     5.793 ±  0.186 %    91.147 ±  0.259 %
+  48       9.3821 ±    0.2301       0.04313 ±    0.00320       0.04333 ±    0.00211     5.759 ±  0.183 %    91.168 ±  0.256 %
+  49       9.2866 ±    0.2249       0.04305 ±    0.00315       0.04299 ±    0.00207     5.729 ±  0.180 %    91.140 ±  0.254 %
+  50       9.3420 ±    0.2241       0.04276 ±    0.00312       0.04306 ±    0.00203     5.723 ±  0.178 %    91.153 ±  0.252 %
+  51       9.3466 ±    0.2221       0.04312 ±    0.00309       0.04296 ±    0.00199     5.705 ±  0.175 %    91.157 ±  0.249 %
+  52       9.3951 ±    0.2214       0.04305 ±    0.00306       0.04294 ±    0.00196     5.680 ±  0.172 %    91.071 ±  0.248 %
+  53       9.4429 ±    0.2203       0.04337 ±    0.00303       0.04276 ±    0.00192     5.655 ±  0.170 %    91.077 ±  0.245 %
+  54       9.4879 ±    0.2194       0.04354 ±    0.00299       0.04262 ±    0.00189     5.632 ±  0.168 %    91.053 ±  0.243 %
+  55       9.4677 ±    0.2168       0.04337 ±    0.00296       0.04245 ±    0.00185     5.601 ±  0.165 %    91.059 ±  0.241 %
+  56       9.5068 ±    0.2159       0.04347 ±    0.00293       0.04242 ±    0.00182     5.590 ±  0.163 %    91.015 ±  0.239 %
+  57       9.5272 ±    0.2145       0.04281 ±    0.00290       0.04243 ±    0.00179     5.578 ±  0.161 %    90.994 ±  0.237 %
+  58       9.5289 ±    0.2124       0.04324 ±    0.00287       0.04224 ±    0.00176     5.559 ±  0.159 %    90.974 ±  0.236 %
+  59       9.5374 ±    0.2107       0.04299 ±    0.00284       0.04202 ±    0.00173     5.541 ±  0.157 %    90.954 ±  0.234 %
+  60       9.5750 ±    0.2100       0.04307 ±    0.00281       0.04193 ±    0.00170     5.532 ±  0.155 %    90.928 ±  0.232 %
+  61       9.6187 ±    0.2095       0.04362 ±    0.00280       0.04214 ±    0.00168     5.530 ±  0.153 %    90.916 ±  0.230 %
+  62       9.6786 ±    0.2090       0.04284 ±    0.00277       0.04194 ±    0.00165     5.507 ±  0.151 %    90.873 ±  0.229 %
+  63       9.7223 ±    0.2082       0.04254 ±    0.00274       0.04182 ±    0.00163     5.496 ±  0.149 %    90.850 ±  0.227 %
+  64       9.7757 ±    0.2077       0.04188 ±    0.00271       0.04169 ±    0.00160     5.488 ±  0.148 %    90.827 ±  0.226 %
+  65       9.8637 ±    0.2082       0.04164 ±    0.00269       0.04160 ±    0.00158     5.474 ±  0.146 %    90.799 ±  0.225 %
+  66       9.9255 ±    0.2083       0.04179 ±    0.00267       0.04147 ±    0.00155     5.459 ±  0.144 %    90.814 ±  0.223 %
+  67      10.0434 ±    0.2100       0.04172 ±    0.00265       0.04139 ±    0.00153     5.433 ±  0.143 %    90.781 ±  0.221 %
+  68      10.0663 ±    0.2090       0.04138 ±    0.00262       0.04120 ±    0.00151     5.422 ±  0.142 %    90.819 ±  0.219 %
+  69      10.0753 ±    0.2075       0.04172 ±    0.00259       0.04102 ±    0.00149     5.402 ±  0.140 %    90.844 ±  0.217 %
+  70      10.0504 ±    0.2054       0.04205 ±    0.00257       0.04095 ±    0.00147     5.413 ±  0.138 %    90.880 ±  0.215 %
+  71      10.1398 ±    0.2059       0.04267 ±    0.00255       0.04077 ±    0.00145     5.391 ±  0.137 %    90.875 ±  0.214 %
+  72      10.1469 ±    0.2044       0.04234 ±    0.00252       0.04064 ±    0.00143     5.372 ±  0.135 %    90.866 ±  0.213 %
+  73      10.1949 ±    0.2041       0.04271 ±    0.00251       0.04065 ±    0.00141     5.356 ±  0.134 %    90.825 ±  0.212 %
+  74      10.1930 ±    0.2028       0.04301 ±    0.00249       0.04078 ±    0.00139     5.372 ±  0.133 %    90.790 ±  0.211 %
+  75      10.1716 ±    0.2013       0.04271 ±    0.00247       0.04068 ±    0.00138     5.366 ±  0.132 %    90.792 ±  0.209 %
+  76      10.1555 ±    0.1997       0.04313 ±    0.00249       0.04196 ±    0.00152     5.454 ±  0.140 %    90.753 ±  0.208 %
+  77      10.1945 ±    0.1993       0.04356 ±    0.00247       0.04188 ±    0.00150     5.449 ±  0.138 %    90.741 ±  0.207 %
+  78      10.2084 ±    0.1990       0.04513 ±    0.00262       0.04346 ±    0.00173     5.622 ±  0.154 %    90.754 ±  0.205 %
+  79      10.1550 ±    0.1965       0.04495 ±    0.00260       0.04328 ±    0.00171     5.609 ±  0.152 %    90.762 ±  0.204 %
+  80      10.1077 ±    0.1941       0.04432 ±    0.00257       0.04305 ±    0.00169     5.593 ±  0.151 %    90.804 ±  0.202 %
+  81      10.0848 ±    0.1923       0.04466 ±    0.00255       0.04298 ±    0.00167     5.587 ±  0.149 %    90.811 ±  0.201 %
+  82      10.1154 ±    0.1918       0.04454 ±    0.00253       0.04287 ±    0.00165     5.567 ±  0.148 %    90.827 ±  0.200 %
+  83      10.1374 ±    0.1909       0.04493 ±    0.00251       0.04290 ±    0.00163     5.565 ±  0.147 %    90.773 ±  0.199 %
+  84      10.1263 ±    0.1895       0.04495 ±    0.00249       0.04298 ±    0.00161     5.578 ±  0.146 %    90.789 ±  0.198 %
+  85      10.1645 ±    0.1893       0.04494 ±    0.00247       0.04288 ±    0.00160     5.564 ±  0.145 %    90.810 ±  0.196 %
+  86      10.2136 ±    0.1894       0.04502 ±    0.00245       0.04285 ±    0.00158     5.552 ±  0.143 %    90.757 ±  0.196 %
+  87      10.2227 ±    0.1884       0.04520 ±    0.00243       0.04285 ±    0.00156     5.544 ±  0.142 %    90.769 ±  0.194 %
+  88      10.2262 ±    0.1875       0.04500 ±    0.00241       0.04278 ±    0.00154     5.529 ±  0.141 %    90.758 ±  0.193 %
+  89      10.1675 ±    0.1852       0.04489 ±    0.00239       0.04266 ±    0.00153     5.526 ±  0.140 %    90.738 ±  0.192 %
+  90      10.1315 ±    0.1834       0.04500 ±    0.00238       0.04257 ±    0.00151     5.526 ±  0.138 %    90.784 ±  0.191 %
+  91      10.1280 ±    0.1822       0.04483 ±    0.00236       0.04256 ±    0.00150     5.519 ±  0.137 %    90.743 ±  0.190 %
+  92      10.1078 ±    0.1807       0.04414 ±    0.00235       0.04337 ±    0.00158     5.569 ±  0.139 %    90.750 ±  0.189 %
+  93      10.1536 ±    0.1807       0.04436 ±    0.00235       0.04336 ±    0.00157     5.562 ±  0.138 %    90.782 ±  0.188 %
+  94      10.1673 ±    0.1800       0.04420 ±    0.00233       0.04349 ±    0.00155     5.581 ±  0.137 %    90.809 ±  0.187 %
+  95      10.1822 ±    0.1793       0.04415 ±    0.00232       0.04340 ±    0.00153     5.568 ±  0.136 %    90.799 ±  0.186 %
+  96      10.1749 ±    0.1781       0.04409 ±    0.00230       0.04338 ±    0.00152     5.557 ±  0.135 %    90.805 ±  0.185 %
+  97      10.1711 ±    0.1772       0.04351 ±    0.00229       0.04333 ±    0.00150     5.554 ±  0.134 %    90.815 ±  0.184 %
+  98      10.1349 ±    0.1754       0.04326 ±    0.00227       0.04329 ±    0.00149     5.558 ±  0.134 %    90.836 ±  0.183 %
+  99      10.1261 ±    0.1743       0.04302 ±    0.00226       0.04325 ±    0.00148     5.569 ±  0.133 %    90.858 ±  0.181 %
+ 100      10.1600 ±    0.1742       0.04321 ±    0.00225       0.04322 ±    0.00146     5.557 ±  0.132 %    90.820 ±  0.181 %
+
+====== Perplexity statistics ======
+Mean PPL(Q)                   :  10.160005 ±   0.174167
+Mean PPL(base)                :   9.730389 ±   0.164989
+Cor(ln(PPL(Q)), ln(PPL(base))):  99.14%
+Mean ln(PPL(Q)/PPL(base))     :   0.043205 ±   0.002247
+Mean PPL(Q)/PPL(base)         :   1.044152 ±   0.002346
+Mean PPL(Q)-PPL(base)         :   0.429616 ±   0.024079
+
+====== KL divergence statistics ======
+Mean    KLD:   0.043216 ±   0.001462
+Maximum KLD:  17.279224
+99.9%   KLD:   1.523172
+99.0%   KLD:   0.302622
+95.0%   KLD:   0.117541
+90.0%   KLD:   0.078506
+Median  KLD:   0.021921
+10.0%   KLD:   0.001396
+ 5.0%   KLD:   0.000446
+ 1.0%   KLD:   0.000071
+ 0.1%   KLD:   0.000011
+Minimum KLD:  -0.000032
+
+====== Token probability statistics ======
+Mean    Δp: -0.607 ± 0.035 %
+Maximum Δp: 99.689%
+99.9%   Δp: 32.847%
+99.0%   Δp: 12.708%
+95.0%   Δp:  5.769%
+90.0%   Δp:  3.134%
+75.0%   Δp:  0.531%
+Median  Δp: -0.030%
+25.0%   Δp: -1.386%
+10.0%   Δp: -4.918%
+ 5.0%   Δp: -7.950%
+ 1.0%   Δp: -17.772%
+ 0.1%   Δp: -47.242%
+Minimum Δp: -99.937%
+RMS Δp    :  5.557 ± 0.132 %
+Same top p: 90.820 ± 0.181 %
+
+PS C:\Users\brian\models> ~\tools\llama.cpp\llama-perplexity.exe -m Qwen3.5-4B-Q2_K.gguf --kl-divergence-base f16_logits.kld --kl-divergence -ngl 99 -b 512
+0.01.240.718 W model has unused tensor blk.32.attn_norm.weight (size = 10240 bytes) -- ignoring
+0.01.240.735 W model has unused tensor blk.32.post_attention_norm.weight (size = 10240 bytes) -- ignoring
+0.01.240.761 W model has unused tensor blk.32.attn_q.weight (size = 6881280 bytes) -- ignoring
+0.01.240.770 W model has unused tensor blk.32.attn_k.weight (size = 860160 bytes) -- ignoring
+0.01.240.779 W model has unused tensor blk.32.attn_v.weight (size = 1474560 bytes) -- ignoring
+0.01.240.825 W model has unused tensor blk.32.attn_output.weight (size = 4505600 bytes) -- ignoring
+0.01.240.838 W model has unused tensor blk.32.attn_q_norm.weight (size = 1024 bytes) -- ignoring
+0.01.240.851 W model has unused tensor blk.32.attn_k_norm.weight (size = 1024 bytes) -- ignoring
+0.01.240.864 W model has unused tensor blk.32.ffn_gate.weight (size = 7741440 bytes) -- ignoring
+0.01.240.874 W model has unused tensor blk.32.ffn_down.weight (size = 10137600 bytes) -- ignoring
+0.01.240.883 W model has unused tensor blk.32.ffn_up.weight (size = 7741440 bytes) -- ignoring
+0.01.240.894 W model has unused tensor blk.32.nextn.eh_proj.weight (size = 4300800 bytes) -- ignoring
+0.01.240.907 W model has unused tensor blk.32.nextn.enorm.weight (size = 10240 bytes) -- ignoring
+0.01.240.918 W model has unused tensor blk.32.nextn.hnorm.weight (size = 10240 bytes) -- ignoring
+0.01.240.949 W model has unused tensor blk.32.nextn.shared_head_norm.weight (size = 10240 bytes) -- ignoring
+0.02.441.922 I cmn          init: llama threadpool init, n_threads = 8
+0.02.528.861 I
+0.02.528.912 I system_info: n_threads = 8 (n_threads_batch = 8) / 16 | CUDA : ARCHS = 750,800,860,890,900,1200,1210 | USE_GRAPHS = 1 | FA_QUANTS = q4_0-q4_0,q8_0-q8_0,f16-f16,bf16-bf16 | BLACKWELL_NATIVE_FP4 = 1 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 |
+0.02.556.613 I kl_divergence: computing over 100 chunks, n_ctx=512, batch_size=512, n_seq=1
+0.02.774.301 I kl_divergence: 0.22 seconds per pass - ETA 0.35 minutes
+
+chunk             PPL               ln(PPL(Q)/PPL(base))          KL Divergence              Δp RMS            Same top p
+   1      14.4798 ±    2.8809       0.88624 ±    0.10640       0.86062 ±    0.07751    31.449 ±  1.939 %    66.275 ±  2.966 %
+   2      24.1904 ±    3.6561       1.04843 ±    0.08117       0.99897 ±    0.05373    29.707 ±  1.388 %    62.549 ±  2.145 %
+   3      25.3336 ±    2.9848       1.07790 ±    0.06613       1.09908 ±    0.04573    31.123 ±  1.121 %    59.477 ±  1.776 %
+   4      24.3477 ±    2.3953       1.05421 ±    0.05695       1.07873 ±    0.03846    30.339 ±  0.952 %    59.216 ±  1.539 %
+   5      22.8096 ±    1.9460       0.97769 ±    0.04907       1.04995 ±    0.03292    29.362 ±  0.847 %    58.275 ±  1.382 %
+   6      25.1323 ±    1.9760       1.03582 ±    0.04605       1.09935 ±    0.02998    28.958 ±  0.763 %    56.340 ±  1.268 %
+   7      26.9374 ±    1.9667       1.06886 ±    0.04302       1.13544 ±    0.02770    28.777 ±  0.697 %    55.238 ±  1.177 %
+   8      29.0453 ±    2.0158       1.06688 ±    0.04065       1.13715 ±    0.02569    28.242 ±  0.652 %    54.118 ±  1.104 %
+   9      30.9629 ±    2.0328       1.07371 ±    0.03813       1.13180 ±    0.02375    27.869 ±  0.614 %    53.900 ±  1.041 %
+  10      32.3998 ±    2.0096       1.08335 ±    0.03606       1.14271 ±    0.02226    27.983 ±  0.586 %    52.980 ±  0.989 %
+  11      32.0923 ±    1.9002       1.08531 ±    0.03451       1.13779 ±    0.02113    27.878 ±  0.560 %    53.048 ±  0.942 %
+  12      32.2418 ±    1.8267       1.07730 ±    0.03287       1.12658 ±    0.01999    27.692 ±  0.535 %    53.105 ±  0.902 %
+  13      33.8060 ±    1.8498       1.06944 ±    0.03172       1.13413 ±    0.01917    27.532 ±  0.512 %    52.609 ±  0.867 %
+  14      32.9032 ±    1.7281       1.09523 ±    0.03083       1.15160 ±    0.01918    28.449 ±  0.501 %    52.773 ±  0.836 %
+  15      31.4708 ±    1.5904       1.06677 ±    0.02968       1.14109 ±    0.01909    28.316 ±  0.485 %    53.438 ±  0.807 %
+  16      31.4373 ±    1.5412       1.05331 ±    0.02884       1.13297 ±    0.01854    28.258 ±  0.470 %    53.701 ±  0.781 %
+  17      28.4012 ±    1.3433       1.01917 ±    0.02776       1.10175 ±    0.01796    28.161 ±  0.456 %    54.510 ±  0.756 %
+  18      28.3892 ±    1.3053       1.01663 ±    0.02699       1.09893 ±    0.01745    28.179 ±  0.445 %    54.749 ±  0.735 %
+  19      28.5119 ±    1.2835       1.03010 ±    0.02661       1.11727 ±    0.01743    28.266 ±  0.433 %    54.757 ±  0.715 %
+  20      28.2342 ±    1.2382       1.02477 ±    0.02583       1.10986 ±    0.01697    28.106 ±  0.421 %    55.039 ±  0.697 %
+  21      27.3475 ±    1.1672       1.02836 ±    0.02530       1.11133 ±    0.01679    28.306 ±  0.410 %    55.387 ±  0.679 %
+  22      27.0535 ±    1.1249       1.02819 ±    0.02462       1.11219 ±    0.01640    28.458 ±  0.400 %    55.472 ±  0.664 %
+  23      25.6316 ±    1.0358       1.01102 ±    0.02376       1.09062 ±    0.01586    28.463 ±  0.391 %    55.993 ±  0.648 %
+  24      24.0031 ±    0.9417       0.99427 ±    0.02302       1.07313 ±    0.01542    28.749 ±  0.386 %    56.340 ±  0.634 %
+  25      23.6763 ±    0.9075       0.99922 ±    0.02260       1.07931 ±    0.01517    29.117 ±  0.378 %    56.251 ±  0.621 %
+  26      22.8213 ±    0.8533       0.98796 ±    0.02204       1.06604 ±    0.01481    28.990 ±  0.370 %    56.591 ±  0.609 %
+  27      22.3478 ±    0.8178       0.98567 ±    0.02159       1.05944 ±    0.01452    28.994 ±  0.362 %    56.935 ±  0.597 %
+  28      22.1690 ±    0.7959       0.98924 ±    0.02115       1.05748 ±    0.01426    29.116 ±  0.356 %    57.031 ±  0.586 %
+  29      22.2100 ±    0.7839       0.99464 ±    0.02090       1.06269 ±    0.01414    29.168 ±  0.351 %    57.039 ±  0.576 %
+  30      22.3215 ±    0.7750       1.00154 ±    0.02058       1.06816 ±    0.01391    29.230 ±  0.346 %    56.915 ±  0.566 %
+  31      22.1494 ±    0.7543       1.00232 ±    0.02022       1.06693 ±    0.01368    29.285 ±  0.341 %    56.977 ±  0.557 %
+  32      22.3973 ±    0.7537       1.01235 ±    0.02011       1.07591 ±    0.01367    29.376 ±  0.336 %    56.936 ±  0.548 %
+  33      22.2306 ±    0.7358       1.01125 ±    0.01976       1.07503 ±    0.01343    29.400 ±  0.331 %    56.910 ±  0.540 %
+  34      22.5474 ±    0.7360       1.01606 ±    0.01947       1.07985 ±    0.01323    29.463 ±  0.327 %    56.747 ±  0.532 %
+  35      22.8276 ±    0.7334       1.01730 ±    0.01916       1.08324 ±    0.01301    29.421 ±  0.322 %    56.549 ±  0.525 %
+  36      23.5164 ±    0.7475       1.02573 ±    0.01897       1.09194 ±    0.01284    29.316 ±  0.318 %    56.220 ±  0.518 %
+  37      23.7906 ±    0.7450       1.02500 ±    0.01866       1.09073 ±    0.01263    29.219 ±  0.313 %    56.269 ±  0.511 %
+  38      23.9407 ±    0.7403       1.03133 ±    0.01842       1.09576 ±    0.01250    29.254 ±  0.309 %    56.120 ±  0.504 %
+  39      24.0384 ±    0.7347       1.03463 ±    0.01821       1.09884 ±    0.01236    29.268 ±  0.305 %    56.068 ±  0.498 %
+  40      24.1578 ±    0.7314       1.03436 ±    0.01802       1.09792 ±    0.01222    29.218 ±  0.301 %    55.980 ±  0.492 %
+  41      24.1642 ±    0.7224       1.02968 ±    0.01780       1.09610 ±    0.01204    29.159 ±  0.297 %    55.983 ±  0.486 %
+  42      24.2002 ±    0.7146       1.02341 ±    0.01755       1.09271 ±    0.01184    29.037 ±  0.293 %    55.938 ±  0.480 %
+  43      24.2248 ±    0.7086       1.02268 ±    0.01735       1.09140 ±    0.01173    29.030 ±  0.290 %    55.996 ±  0.474 %
+  44      24.1089 ±    0.6954       1.01852 ±    0.01712       1.09023 ±    0.01156    29.036 ±  0.286 %    55.936 ±  0.469 %
+  45      24.4189 ±    0.6966       1.01988 ±    0.01693       1.09212 ±    0.01143    29.077 ±  0.283 %    55.756 ±  0.464 %
+  46      24.3675 ±    0.6866       1.02338 ±    0.01680       1.09397 ±    0.01138    29.173 ±  0.281 %    55.823 ±  0.459 %
+  47      24.7352 ±    0.6903       1.02128 ±    0.01661       1.09641 ±    0.01126    29.109 ±  0.278 %    55.711 ±  0.454 %
+  48      25.0237 ±    0.6908       1.02414 ±    0.01648       1.09952 ±    0.01115    29.169 ±  0.276 %    55.645 ±  0.449 %
+  49      24.6333 ±    0.6715       1.01858 ±    0.01626       1.09334 ±    0.01102    29.126 ±  0.273 %    55.846 ±  0.444 %
+  50      24.5470 ±    0.6616       1.00883 ±    0.01606       1.08715 ±    0.01085    29.013 ±  0.269 %    56.024 ±  0.440 %
+  51      24.3443 ±    0.6492       1.00040 ±    0.01584       1.08047 ±    0.01070    28.910 ±  0.266 %    56.194 ±  0.435 %
+  52      24.3261 ±    0.6425       0.99442 ±    0.01564       1.07490 ±    0.01054    28.805 ±  0.264 %    56.267 ±  0.431 %
+  53      24.4139 ±    0.6384       0.99326 ±    0.01547       1.07217 ±    0.01040    28.721 ±  0.261 %    56.212 ±  0.427 %
+  54      24.4723 ±    0.6341       0.99106 ±    0.01532       1.06843 ±    0.01026    28.615 ±  0.258 %    56.202 ±  0.423 %
+  55      24.3719 ±    0.6257       0.98892 ±    0.01515       1.06410 ±    0.01012    28.509 ±  0.255 %    56.321 ±  0.419 %
+  56      24.4220 ±    0.6215       0.98695 ±    0.01498       1.06211 ±    0.00999    28.471 ±  0.253 %    56.338 ±  0.415 %
+  57      24.4459 ±    0.6167       0.98512 ±    0.01484       1.06151 ±    0.00990    28.436 ±  0.251 %    56.319 ±  0.411 %
+  58      24.4459 ±    0.6108       0.98537 ±    0.01470       1.06127 ±    0.00980    28.451 ±  0.249 %    56.275 ±  0.408 %
+  59      24.3570 ±    0.6027       0.98058 ±    0.01455       1.05710 ±    0.00969    28.381 ±  0.246 %    56.384 ±  0.404 %
+  60      24.3305 ±    0.5970       0.97565 ±    0.01439       1.05243 ±    0.00957    28.284 ±  0.244 %    56.503 ±  0.401 %
+  61      24.3621 ±    0.5933       0.97294 ±    0.01426       1.05089 ±    0.00947    28.226 ±  0.242 %    56.464 ±  0.398 %
+  62      24.5312 ±    0.5927       0.97287 ±    0.01411       1.04856 ±    0.00935    28.109 ±  0.239 %    56.483 ±  0.394 %
+  63      24.6582 ±    0.5905       0.97324 ±    0.01397       1.04829 ±    0.00924    28.082 ±  0.237 %    56.520 ±  0.391 %
+  64      24.7818 ±    0.5881       0.97209 ±    0.01384       1.04783 ±    0.00915    28.042 ±  0.235 %    56.501 ±  0.388 %
+  65      24.9692 ±    0.5881       0.97042 ±    0.01374       1.04555 ±    0.00905    27.983 ±  0.233 %    56.477 ±  0.385 %
+  66      25.1232 ±    0.5874       0.97048 ±    0.01364       1.04679 ±    0.00898    27.995 ±  0.231 %    56.411 ±  0.382 %
+  67      25.3801 ±    0.5901       0.96878 ±    0.01354       1.04679 ±    0.00889    27.949 ±  0.229 %    56.400 ±  0.379 %
+  68      25.3548 ±    0.5856       0.96515 ±    0.01341       1.04290 ±    0.00880    27.851 ±  0.227 %    56.482 ±  0.377 %
+  69      25.2820 ±    0.5793       0.96173 ±    0.01328       1.03823 ±    0.00870    27.770 ±  0.225 %    56.573 ±  0.374 %
+  70      25.1562 ±    0.5720       0.95954 ±    0.01316       1.03461 ±    0.00862    27.747 ±  0.224 %    56.616 ±  0.371 %
+  71      25.3118 ±    0.5707       0.95747 ±    0.01305       1.03354 ±    0.00853    27.712 ±  0.222 %    56.520 ±  0.368 %
+  72      25.2608 ±    0.5649       0.95442 ±    0.01295       1.03166 ±    0.00846    27.668 ±  0.220 %    56.552 ±  0.366 %
+  73      25.3613 ±    0.5635       0.95405 ±    0.01284       1.03128 ±    0.00838    27.628 ±  0.219 %    56.562 ±  0.363 %
+  74      25.3926 ±    0.5603       0.95577 ±    0.01276       1.03283 ±    0.00832    27.677 ±  0.217 %    56.439 ±  0.361 %
+  75      25.3262 ±    0.5560       0.95494 ±    0.01268       1.03206 ±    0.00827    27.668 ±  0.216 %    56.533 ±  0.358 %
+  76      25.3709 ±    0.5543       0.95871 ±    0.01265       1.03791 ±    0.00831    27.722 ±  0.215 %    56.481 ±  0.356 %
+  77      25.4517 ±    0.5529       0.95849 ±    0.01257       1.03815 ±    0.00825    27.671 ±  0.213 %    56.537 ±  0.354 %
+  78      25.3314 ±    0.5485       0.95397 ±    0.01247       1.03627 ±    0.00821    27.616 ±  0.212 %    56.702 ±  0.351 %
+  79      25.1672 ±    0.5412       0.95252 ±    0.01239       1.03635 ±    0.00817    27.636 ±  0.210 %    56.768 ±  0.349 %
+  80      24.9775 ±    0.5333       0.94899 ±    0.01230       1.03261 ±    0.00810    27.583 ±  0.209 %    56.892 ±  0.347 %
+  81      24.9196 ±    0.5289       0.94928 ±    0.01222       1.03352 ±    0.00804    27.580 ±  0.207 %    56.960 ±  0.345 %
+  82      25.0139 ±    0.5277       0.94992 ±    0.01215       1.03494 ±    0.00799    27.560 ±  0.206 %    56.987 ±  0.342 %
+  83      25.1244 ±    0.5268       0.95254 ±    0.01212       1.03762 ±    0.00796    27.569 ±  0.205 %    56.891 ±  0.340 %
+  84      25.1124 ±    0.5234       0.95318 ±    0.01205       1.04010 ±    0.00793    27.589 ±  0.204 %    56.849 ±  0.338 %
+  85      25.2002 ±    0.5224       0.95289 ±    0.01199       1.03921 ±    0.00788    27.588 ±  0.203 %    56.867 ±  0.336 %
+  86      25.3274 ±    0.5224       0.95319 ±    0.01194       1.04109 ±    0.00783    27.537 ±  0.202 %    56.817 ±  0.334 %
+  87      25.4016 ±    0.5213       0.95541 ±    0.01188       1.04339 ±    0.00781    27.496 ±  0.200 %    56.845 ±  0.333 %
+  88      25.5299 ±    0.5217       0.95989 ±    0.01184       1.04706 ±    0.00779    27.523 ±  0.199 %    56.796 ±  0.331 %
+  89      25.3613 ±    0.5148       0.95892 ±    0.01175       1.04529 ±    0.00774    27.542 ±  0.198 %    56.885 ±  0.329 %
+  90      25.2993 ±    0.5104       0.96013 ±    0.01167       1.04588 ±    0.00768    27.572 ±  0.197 %    56.854 ±  0.327 %
+  91      25.3309 ±    0.5082       0.96155 ±    0.01161       1.04672 ±    0.00764    27.583 ±  0.196 %    56.811 ±  0.325 %
+  92      25.2688 ±    0.5041       0.96040 ±    0.01155       1.04701 ±    0.00762    27.572 ±  0.195 %    56.850 ±  0.323 %
+  93      25.4376 ±    0.5050       0.96276 ±    0.01151       1.04947 ±    0.00757    27.582 ±  0.194 %    56.808 ±  0.322 %
+  94      25.5012 ±    0.5038       0.96375 ±    0.01146       1.05108 ±    0.00755    27.587 ±  0.193 %    56.763 ±  0.320 %
+  95      25.4789 ±    0.5007       0.96136 ±    0.01139       1.04945 ±    0.00749    27.519 ±  0.192 %    56.780 ±  0.318 %
+  96      25.4984 ±    0.4982       0.96279 ±    0.01133       1.05002 ±    0.00744    27.519 ±  0.191 %    56.736 ±  0.317 %
+  97      25.5150 ±    0.4963       0.96322 ±    0.01128       1.05111 ±    0.00740    27.528 ±  0.190 %    56.754 ±  0.315 %
+  98      25.3892 ±    0.4908       0.96160 ±    0.01120       1.04939 ±    0.00735    27.503 ±  0.189 %    56.811 ±  0.313 %
+  99      25.3552 ±    0.4879       0.96089 ±    0.01116       1.04960 ±    0.00731    27.479 ±  0.188 %    56.835 ±  0.312 %
+ 100      25.5032 ±    0.4887       0.96355 ±    0.01113       1.05191 ±    0.00728    27.498 ±  0.187 %    56.749 ±  0.310 %
+
+====== Perplexity statistics ======
+Mean PPL(Q)                   :  25.503182 ±   0.488651
+Mean PPL(base)                :   9.730389 ±   0.164989
+Cor(ln(PPL(Q)), ln(PPL(base))):  81.67%
+Mean ln(PPL(Q)/PPL(base))     :   0.963549 ±   0.011133
+Mean PPL(Q)/PPL(base)         :   2.620983 ±   0.029181
+Mean PPL(Q)-PPL(base)         :  15.772793 ±   0.366485
+
+====== KL divergence statistics ======
+Mean    KLD:   1.051907 ±   0.007279
+Maximum KLD:  18.630756
+99.9%   KLD:   9.678877
+99.0%   KLD:   5.575627
+95.0%   KLD:   3.247564
+90.0%   KLD:   2.368555
+Median  KLD:   0.713362
+10.0%   KLD:   0.091368
+ 5.0%   KLD:   0.033164
+ 1.0%   KLD:   0.006693
+ 0.1%   KLD:   0.001542
+Minimum KLD:   0.000309
+
+====== Token probability statistics ======
+Mean    Δp: -14.008 ± 0.148 %
+Maximum Δp: 99.663%
+99.9%   Δp: 58.618%
+99.0%   Δp: 28.140%
+95.0%   Δp:  9.115%
+90.0%   Δp:  2.671%
+75.0%   Δp: -0.046%
+Median  Δp: -4.672%
+25.0%   Δp: -22.459%
+10.0%   Δp: -48.995%
+ 5.0%   Δp: -66.751%
+ 1.0%   Δp: -90.990%
+ 0.1%   Δp: -98.852%
+Minimum Δp: -99.996%
+RMS Δp    : 27.498 ± 0.187 %
+Same top p: 56.749 ± 0.310 %
+
+PS C:\Users\brian\models>
