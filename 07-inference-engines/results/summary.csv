@@ -1,0 +1,18 @@
+engine,hardware,users,ttft_p50_s,per_user_tok_s,total_tok_s,total_tok_s_best_round,total_tok_s_worst_round
+vLLM,Colab T4,1,0.235,25.7,25.2,25.6,24.4
+vLLM,Colab T4,2,0.355,23.9,46.4,46.6,46.1
+vLLM,Colab T4,4,0.872,21.6,80.8,80.8,80.7
+vLLM,Colab T4,8,1.241,17.5,129.4,129.6,129.2
+vLLM,Colab T4,16,2.254,13.0,187.2,187.5,186.9
+vLLM,Colab T4,32,3.783,8.3,236.1,236.3,236.1
+llama.cpp,Colab T4,1,0.185,29.5,29.0,29.2,28.7
+llama.cpp,Colab T4,2,0.306,20.4,39.8,40.5,38.2
+llama.cpp,Colab T4,4,0.797,23.3,87.4,87.8,87.0
+llama.cpp,Colab T4,8,1.222,20.4,152.3,153.6,79.4
+llama.cpp,Colab T4,16,2.175,15.0,223.5,224.3,139.8
+llama.cpp,Colab T4,32,3.698,10.1,281.0,281.9,280.4
+llama.cpp,RTX 5070,1,0.06,70.2,69.3,69.5,69.1
+llama.cpp,RTX 5070,2,0.079,62.9,123.6,124.0,123.2
+llama.cpp,RTX 5070,4,0.223,57.1,220.1,221.6,108.5
+llama.cpp,RTX 5070,8,0.289,48.2,368.3,372.9,198.5
+llama.cpp,RTX 5070,16,0.539,36.6,543.1,546.0,540.2
