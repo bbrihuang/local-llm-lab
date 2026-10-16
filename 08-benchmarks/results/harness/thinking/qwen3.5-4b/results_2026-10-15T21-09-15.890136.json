@@ -1,0 +1,146 @@
+{
+  "results": {
+    "mmlu_pro_qwen": {
+      "name": "mmlu_pro_qwen",
+      "alias": "mmlu_pro_qwen",
+      "sample_len": 210,
+      "exact_match,last-answer": 0.7238095238095238,
+      "exact_match_stderr,last-answer": 0.030927395843275775
+    }
+  },
+  "group_subtasks": {},
+  "configs": {
+    "mmlu_pro_qwen": {
+      "task": "mmlu_pro_qwen",
+      "dataset_path": "TIGER-Lab/MMLU-Pro",
+      "test_split": "test",
+      "process_docs": "def mmlu_pro_docs(dataset):\n    by_subject = {}\n    for i, cat in enumerate(dataset[\"category\"]):\n        by_subject.setdefault(cat, []).append(i)\n    rng = random.Random(1234)\n    keep = []\n    for cat in sorted(by_subject):\n        keep += rng.sample(by_subject[cat], min(PER_SUBJECT, len(by_subject[cat])))\n    return dataset.select(sorted(keep))\n",
+      "doc_to_text": "def mmlu_pro_text(doc):\n    return _prompt(doc[\"question\"], doc[\"options\"])\n",
+      "doc_to_target": "def mmlu_pro_target(doc):\n    return doc[\"answer\"]\n",
+      "unsafe_code": false,
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": null,
+        "process_docs": "<function mmlu_pro_docs at 0x0000024A6B52E200>",
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "<function mmlu_pro_text at 0x0000024A6B52E2A0>",
+        "doc_to_choice": null,
+        "doc_to_target": "<function mmlu_pro_target at 0x0000024A6B52E340>",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "exact_match",
+          "aggregation": "mean",
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [],
+        "max_gen_toks": 14000,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "presence_penalty": 1.5
+      },
+      "repeats": 1,
+      "filter_list": [
+        {
+          "name": "last-answer",
+          "filter": [
+            {
+              "function": "regex",
+              "regex_pattern": "answer is \\(?([A-J])\\)?",
+              "group_select": -1
+            },
+            {
+              "function": "take_first"
+            }
+          ]
+        }
+      ],
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 1.0,
+        "model": "qwen3.5-4b",
+        "base_url": "http://127.0.0.1:8080/v1/chat/completions",
+        "num_concurrent": 4,
+        "max_retries": 3,
+        "timeout": 3600,
+        "config_source": "tasks\\mmlu_pro_qwen.yaml"
+      }
+    }
+  },
+  "versions": {
+    "mmlu_pro_qwen": 1.0
+  },
+  "n-shot": {
+    "mmlu_pro_qwen": 0
+  },
+  "higher_is_better": {
+    "mmlu_pro_qwen": {
+      "exact_match": true
+    }
+  },
+  "n-samples": {
+    "mmlu_pro_qwen": {
+      "original": 210,
+      "effective": 210
+    }
+  },
+  "config": {
+    "model": "local-chat-completions",
+    "model_args": {
+      "model": "qwen3.5-4b",
+      "base_url": "http://127.0.0.1:8080/v1/chat/completions",
+      "num_concurrent": 4,
+      "max_retries": 3,
+      "timeout": 3600
+    },
+    "batch_size": 1,
+    "batch_sizes": [],
+    "device": "cuda:0",
+    "use_cache": null,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": {
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "top_k": 20,
+      "presence_penalty": 1.5,
+      "max_gen_toks": 14000
+    },
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "21b38c0",
+  "date": 1792106351.9941823,
+  "pretty_env_info": "PyTorch version: 2.14.1+cu130\nIs debug build: False\nCUDA used to build PyTorch: 13.0\nROCM used to build PyTorch: N/A\n\nOS: Microsoft Windows 11 Pro (10.0.26300 64-bit)\nGCC version: Could not collect\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: N/A\n\nPython version: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)] (64-bit runtime)\nPython platform: Windows-11-10.0.26300-SP0\nIs CUDA available: True\nCUDA runtime version: 13.4.59\r\nCUDA_MODULE_LOADING set to: \nGPU models and configuration: GPU 0: NVIDIA GeForce RTX 5070\nNvidia driver version: Could not collect\ncuDNN version: Could not collect\nIs XPU available: False\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: False\nCaching allocator config: N/A\n\nCPU:\nName: AMD Ryzen 7 3700X 8-Core Processor             \nManufacturer: AuthenticAMD\nFamily: 107\nArchitecture: 9\nProcessorType: 3\nDeviceID: CPU0\nCurrentClockSpeed: 3600\nMaxClockSpeed: 3600\nL2CacheSize: 4096\nL2CacheSpeed: None\nRevision: 28928\n\nVersions of relevant libraries:\n[pip3] numpy==2.5.4\n[pip3] torch==2.14.1+cu130\n[conda] Could not collect",
+  "transformers_version": "5.19.0",
+  "lm_eval_version": "0.4.13",
+  "upper_git_hash": "21b38c0767c1ed2f3edffb19f87f6773c7639031",
+  "task_hashes": {
+    "mmlu_pro_qwen": "4b8c617c6f576a0508843160eb2eee693857022100767ded2bb1d3a20a90ce4c"
+  },
+  "model_source": "local-chat-completions",
+  "model_name": "qwen3.5-4b",
+  "model_name_sanitized": "qwen3.5-4b",
+  "system_instruction": null,
+  "system_instruction_sha": null,
+  "fewshot_as_multiturn": true,
+  "chat_template": "",
+  "chat_template_sha": null,
+  "total_evaluation_time_seconds": "6654.451672799998"
+}

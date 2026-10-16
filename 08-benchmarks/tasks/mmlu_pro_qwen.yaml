@@ -1,0 +1,26 @@
+task: mmlu_pro_qwen
+dataset_path: TIGER-Lab/MMLU-Pro
+test_split: test
+process_docs: !function qwen_utils.mmlu_pro_docs
+output_type: generate_until
+doc_to_text: !function qwen_utils.mmlu_pro_text
+doc_to_target: !function qwen_utils.mmlu_pro_target
+num_fewshot: 0
+generation_kwargs:
+  until: []
+  max_gen_toks: 4096
+filter_list:
+  - name: last-answer
+    filter:
+      - function: regex
+        regex_pattern: 'answer is \(?([A-J])\)?'
+        group_select: -1
+      - function: take_first
+metric_list:
+  - metric: exact_match
+    aggregation: mean
+    higher_is_better: true
+    ignore_case: true
+    ignore_punctuation: true
+metadata:
+  version: 1.0
