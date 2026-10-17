@@ -1,0 +1,23 @@
+method,family,bits_per_weight,perplexity,vs_unquantized,quantize_seconds,what
+fp,baseline,16,19.06,+0.0%,0.0,no quantization
+w4_rtn_tensor,W4A16,4.0,789566.184,+4142509.5%,3.3,"round to nearest, one scale for the whole matrix"
+w4_rtn_channel,W4A16,4.0,32.83,+72.2%,0.1,"round to nearest, one scale per output row"
+w4_rtn_g128,W4A16,4.25,23.355,+22.5%,0.1,"round to nearest, one scale per 128 weights"
+w4_gptq_g128,W4A16,4.25,22.057,+15.7%,96.3,"GPTQ error correction, group 128"
+w4_awq_g128,W4A16,4.25,21.316,+11.8%,4.0,"AWQ activation-aware scaling, group 128"
+w4_hadamard_g128,W4A16,4.25,27.784,+45.8%,0.2,"Hadamard rotation, then round to nearest, group 128"
+w4_mxfp4,W4A16,4.25,23.119,+21.3%,0.3,"MXFP4 weights (block 32, power-of-two scale)"
+w4_nvfp4,W4A16,4.5,21.351,+12.0%,0.2,"NVFP4 weights (block 16, FP8 scale)"
+w1.58_ternary,W1.58,1.58,2561979.83,+13441815.5%,0.1,"BitNet b1.58 ternary weights, applied after training"
+w8a8_tensor,W8A8,8,33.098,+73.7%,0.1,"int8 weights per row, int8 activations with one scale per batch"
+w8a8_token,W8A8,8,19.349,+1.5%,0.1,"int8 weights per row, int8 activations per token"
+w8a8_llm_int8,W8A8,8,19.058,-0.0%,0.1,"LLM.int8(): per-token int8, but outlier features (|x| > 6) kept in 16 bits"
+w8a8_smoothquant,W8A8,8,19.138,+0.4%,0.1,"SmoothQuant (alpha 0.5), then per-token int8"
+w4a4_token,W4A4,4,93156.953,+488665.7%,0.1,"int4 weights per row, int4 activations per token"
+w4a4_smoothquant,W4A4,4,2864.514,+14929.2%,0.1,"SmoothQuant (alpha 0.5), then int4"
+w4a4_hadamard,W4A4,4,89.441,+369.3%,0.1,"Hadamard rotation, then int4 (QuaRot without GPTQ)"
+w4a4_hadamard_gptq,W4A4,4,34.492,+81.0%,81.5,"Hadamard rotation, GPTQ int4 weights (the QuaRot recipe)"
+w4a4_mxfp4,W4A4,4.25,30.142,+58.1%,0.2,MXFP4 weights and activations
+w4a4_hadamard_mxfp4,W4A4,4.25,41.268,+116.5%,0.2,"Hadamard rotation, then MXFP4"
+w4a4_nvfp4,W4A4,4.5,23.853,+25.1%,0.2,NVFP4 weights and activations
+w4a4_hadamard_nvfp4,W4A4,4.5,34.351,+80.2%,0.2,"Hadamard rotation, then NVFP4"
