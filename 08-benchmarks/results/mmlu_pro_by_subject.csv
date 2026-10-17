@@ -1,0 +1,15 @@
+subject,questions,thinking off (% right),"thinking on, run 1 (% right)","thinking on, run 2 (% right)"
+biology,15,67,80,93
+business,15,67,80,87
+chemistry,15,80,87,80
+computer science,15,73,73,73
+economics,15,67,73,73
+engineering,15,47,53,47
+health,15,53,67,73
+history,15,73,67,67
+law,15,40,27,20
+math,15,93,93,93
+other,15,87,80,80
+philosophy,15,80,67,73
+physics,15,80,87,87
+psychology,15,73,80,87

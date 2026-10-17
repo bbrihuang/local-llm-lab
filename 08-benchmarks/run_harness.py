@@ -9,7 +9,7 @@ then stops the server. The two tasks live in tasks/ (200 ARC-Challenge questions
 15 questions from each of MMLU-Pro's 14 subjects = 210).
 
   instant   thinking off. Fast (minutes).
-  thinking  thinking on, as in Qwen's official scores. Much slower: each answer can be
+  thinking  thinking on, Qwen3.5's default mode. Much slower: each answer can be
             thousands of tokens of reasoning.
 """
 import argparse

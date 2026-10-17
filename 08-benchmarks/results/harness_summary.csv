@@ -1,0 +1,6 @@
+benchmark,setting,questions,right,accuracy_pct,stderr_pct,unanswered,accuracy_pct_if_only_answered
+ARC-Challenge,thinking off,200,190,95.0,1.5,0,95.0
+MMLU-Pro,thinking off,210,147,70.0,3.2,18,76.6
+ARC-Challenge,thinking on,200,192,96.0,1.4,0,96.0
+MMLU-Pro,"thinking on, run 1",210,152,72.4,3.1,14,77.6
+MMLU-Pro,"thinking on, run 2",210,155,73.8,3.0,17,80.3

@@ -1,0 +1,7 @@
+benchmark,id,mode,correct,reason
+SimpleQA,2207,instant,0,"Named Lyudmila Karachkina; the right answer is Lyudmila Zhuravlyova."
+SimpleQA,2608,instant,0,"Said approximately 250-260 songs; the right answer is 137."
+SimpleQA,767,thinking,0,"Said 2014; the right answer is 2012."
+SimpleQA,2207,thinking,0,"Used all 20,000 tokens thinking and never gave an answer."
+SimpleQA,2608,thinking,0,"Said 523; the right answer is 137."
+Humanity's Last Exam,674490c88354817cce712062,instant,0,"Ran out of room (4,096 tokens) before giving a final answer."

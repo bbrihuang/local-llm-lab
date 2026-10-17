@@ -1,0 +1,21 @@
+benchmark,setting,right,wrong,not_yet_checked
+MMLU,thinking off,2,1,0
+MMLU,thinking on,2,1,0
+MMLU-Pro,thinking off,3,0,0
+MMLU-Pro,thinking on,3,0,0
+GPQA-Diamond,thinking off,2,1,0
+GPQA-Diamond,thinking on,3,0,0
+Humanity's Last Exam,thinking off,1,2,0
+Humanity's Last Exam,thinking on,0,1,2
+ARC-Challenge,thinking off,3,0,0
+ARC-Challenge,thinking on,3,0,0
+HellaSwag,thinking off,2,1,0
+HellaSwag,thinking on,3,0,0
+WinoGrande,thinking off,3,0,0
+WinoGrande,thinking on,3,0,0
+SimpleQA,thinking off,1,2,0
+SimpleQA,thinking on,0,3,0
+IFEval,thinking off,1,2,0
+IFEval,thinking on,3,0,0
+RULER,thinking off,3,0,0
+RULER,thinking on,3,0,0
