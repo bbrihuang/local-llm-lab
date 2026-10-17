@@ -1,6 +1,6 @@
 # Task 6: Types of attention
 
-**Status:** the hands-on measurement is done. The reading and the presentation on attention designs (MHA, GQA, MLA, sliding window, sparse, linear, FlashAttention) are still to do.
+**Status:** the hands-on measurement is done by me. The reading notes and a slide draft on attention designs (MHA, GQA, MLA, sliding window, sparse, linear, FlashAttention) were written by Claude, so I still need to check and present them.
 
 **Finding:** In Qwen3-0.6B, a typical attention head gets 90% of its attention from about 34 of the 3,500+ earlier tokens it could look at, which is under 1%. Much of that attention goes to a single place: from layer 3 on, the very first token of the text gets 20% to 75% of all attention, even though it's an ordinary word. The first token plus the most recent 128 tokens hold 62% to 95% of the attention in every layer. That pattern is why sliding-window attention that also keeps the first few tokens works well. The 5% to 38% left over, though, is spread thinly across thousands of tokens.
 
@@ -80,10 +80,18 @@ Full per-layer numbers are in [results/per_layer.csv](results/per_layer.csv), an
 - k90 is a median over positions. Some positions need far more, which the shaded band in the first chart shows.
 - 90% is an arbitrary cut-off. The `k50_median` column in `per_head.csv` gives the 50% version.
 
+## Reading and slides (written by Claude, not by me)
+
+- **Notes:** [notes/readings.md](notes/readings.md) covers Raschka's visual guide, the GQA paper, DeepSeek-V2, DeepSeek-V3.2 and V4, FlashAttention, Native Sparse Attention, Kimi Linear and the MiniMax post, with the key formulas, the numbers from each source, a comparison table and a section that ties my measurement to the designs (marked as inference). All sources were read through a tool that summarises pages, so figure values that exist only as plots are missing, and the notes say so. DeepSeek-V2's ablation tables were not readable (marked not verified).
+- **Welch Labs video:** I have not watched it, and neither did Claude. The notes use the video's page and a third-party summary, and say so.
+- **Slides:** [Attention Designs Compared](https://claude.ai/artifact/3wrsT6ASjB1VrXeD8Dx77u), 19 slides with speaker notes and the math for each design.
+- **Mismatches the sources contain:** the FlashAttention text says 3x for GPT-2 while its table says 3.5x; the NSA paper gives both 260B and 270B training tokens; Kimi Linear's "6x decoding" is partly a batch-size effect (about 2.3x at batch size 1).
+
 ## Still to do
 
-- Readings: Raschka's visual guide to attention variants, GQA, DeepSeek-V2 (MLA), the Welch Labs MLA video, FlashAttention, Native Sparse Attention, DeepSeek-V3.2 (DSA) and V4 (CSA/HCA), Kimi Linear, and MiniMax on why M2 went back to full attention.
-- The presentation: each attention design with its math, and what it saves in memory and speed compared with plain multi-head attention.
+- Watch the Welch Labs video and read the DeepSeek-V2 ablation tables (Appendix D), then correct the notes where needed.
+- Skim the slides, put the parts I will say in my own words, and present them.
+- The V4 report's limitations section and a few Raschka figure values could not be read; check them against the originals before quoting.
 
 ## Commands
 
