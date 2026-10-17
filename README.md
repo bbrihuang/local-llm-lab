@@ -1,6 +1,6 @@
 # local-llm-lab
 
-Twelve hands-on experiments with local language models, run on one gaming PC (Windows 11, NVIDIA RTX 5070 with 12 GB of memory) with a few Colab GPU sessions for the jobs that needed more. Each folder asks one question, measures it, and says what the numbers do and do not show.
+Twelve hands-on experiments with local language models, done as part of BU AI Society's Local LLM Division. They were run on one gaming PC (Windows 11, NVIDIA RTX 5070 with 12 GB of memory) with a few Colab GPU sessions for the jobs that needed more. Each folder asks one question, measures it, and says what the numbers do and do not show.
 
 The main model is **Qwen3.5-4B**, with Qwen3 models of other sizes where a task needed them. Most speed tests use **llama.cpp**; everything is in this repo so it can be rerun.
 
