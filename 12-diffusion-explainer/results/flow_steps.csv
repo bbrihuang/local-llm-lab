@@ -1,0 +1,10 @@
+euler_steps,avg_distance_to_shape
+1,0.3782
+2,0.1565
+4,0.0603
+8,0.0363
+16,0.0304
+32,0.0275
+100,0.0263
+real data (reference),0.0192
+pure noise (reference),0.2622
