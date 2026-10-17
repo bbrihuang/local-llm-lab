@@ -1,6 +1,6 @@
 # Task 7: Inference engines
 
-**Status:** the speed tests are done (by me). The five readings were done by Claude on 2026-10-17 (see `notes/readings.md`); I have not checked them against the sources myself.
+**Status:** the speed tests are done (by me). The five readings were summarized by Claude on 2026-10-17 and the notes reviewed by me (see `notes/readings.md`); I have not checked them against the sources myself.
 
 **Finding:** On the same Colab T4 GPU, llama.cpp matched vLLM for 1 to 4 users and pulled ahead from 8 users on: 281 vs 236 tokens per second in total at 32 users, about 19% more. That is the opposite of vLLM's reputation as the engine built for many users. The most likely reason is the GPU: the T4 is too old for vLLM's fast attention code, so vLLM fell back to a slower version. vLLM was the steadier of the two, though. llama.cpp had a strange habit on both the T4 and my PC: at some user counts, its second round ran at about half speed, while the first and third were normal. vLLM never did this. On my PC, llama.cpp on the RTX 5070 was 2.4x to 3.1x faster than on the T4 (70 vs 29 tokens per second for one user, 543 vs 224 for 16).
 
@@ -93,7 +93,7 @@ It was always the second round, never the first or third, and it happened on two
 - 400-token prompts and 256-token answers. Longer conversations would stress the KV cache more, which is where vLLM's paged memory is designed to help.
 - 3 rounds per point. Medians hide llama.cpp's slow rounds in the charts, but a real user would sometimes hit one.
 
-## Reading (done by Claude, not by me)
+## Reading (sources summarized by Claude, notes reviewed by me)
 Claude read the five sources with a web tool that summarizes pages, so figures may be slightly off; items it could not find are marked "not found" in `notes/readings.md`. The notes link each source to my results and label every link as "the source says" or "a guess". Short version: the sources do not explain why llama.cpp beat vLLM at 32 users on the T4 (PagedAttention's gains show up with long sequences and memory pressure, which my short test avoids), nor the half-speed round 2. My 70 tok/s on the RTX 5070 near the memory limit fits the roofline idea in the vLLM post.
 
 ## Still to do

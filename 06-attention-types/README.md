@@ -80,7 +80,7 @@ Full per-layer numbers are in [results/per_layer.csv](results/per_layer.csv), an
 - k90 is a median over positions. Some positions need far more, which the shaded band in the first chart shows.
 - 90% is an arbitrary cut-off. The `k50_median` column in `per_head.csv` gives the 50% version.
 
-## Reading and slides (written by Claude, not by me)
+## Reading and slides (sources summarized and slides drafted by Claude, notes reviewed by me)
 
 - **Notes:** [notes/readings.md](notes/readings.md) covers Raschka's visual guide, the GQA paper, DeepSeek-V2, DeepSeek-V3.2 and V4, FlashAttention, Native Sparse Attention, Kimi Linear and the MiniMax post, with the key formulas, the numbers from each source, a comparison table and a section that ties my measurement to the designs (marked as inference). All sources were read through a tool that summarises pages, so figure values that exist only as plots are missing, and the notes say so. DeepSeek-V2's ablation tables were not readable (marked not verified).
 - **Welch Labs video:** I have not watched it, and neither did Claude. The notes use the video's page and a third-party summary, and say so.

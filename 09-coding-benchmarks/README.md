@@ -109,7 +109,7 @@ That matches what the official test `test_no_content_length` checks (GET and HEA
 ## Still open
 
 - I did not solve the SWE-bench task independently; a model-agent run of it (the real benchmark setup) is not done.
-- The reading: HF Evaluation Guidebook (code section), LiveBench introduction, and the coding tables of the Qwen3, DeepSeek-V4 and GLM-5 reports (the numbers are collected, the papers aren't read).
+- The reading: summarized by Claude on 2026-10-17 and the notes reviewed by me (`notes/readings.md`): the HF Evaluation Guidebook code section, LiveBench, and the coding tables of the Qwen3, DeepSeek-V4 (model card, no separate report found) and GLM-5 reports. Fetched through a page-summarizing tool, so check key numbers against the originals. No post-trained HumanEval score appears in any of the three reports; the reports show thinking helping a lot on LiveCodeBench, while my HumanEval gap is within noise.
 
 ## Commands
 

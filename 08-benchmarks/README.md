@@ -102,7 +102,7 @@ Full table: [results/own_questions_summary.csv](results/own_questions_summary.cs
 
 - **Quiz.** `quiz.py` so I can answer the same 30 questions and compare with the model. Not done yet.
 - **Two HLE answers** (thinking on) need my judgement: `python quiz.py --model-answers`.
-- **Readings**: done by Claude, not by me, on 2026-10-17 (`notes/readings.md`): HF Evaluation Guidebook, LiveBench, The Leaderboard Illusion, Adding Error Bars to Evals, and the Qwen3, DeepSeek-V4 and GLM-5 benchmark tables. They were fetched through a page-summarizing tool, so exact numbers should be rechecked against the originals; the notes list what could not be fetched. The most useful finding: the same model's score swings a lot with the setting (Qwen3-4B GPQA-Diamond 41.7 off vs 55.9 on), and none of the sources covers cut-off replies, so my explanation of the 79.1% gap stays a guess. Qwen3.5-4B has no row in those three reports.
+- **Readings**: summarized by Claude on 2026-10-17 and the notes reviewed by me (`notes/readings.md`): HF Evaluation Guidebook, LiveBench, The Leaderboard Illusion, Adding Error Bars to Evals, and the Qwen3, DeepSeek-V4 and GLM-5 benchmark tables. They were fetched through a page-summarizing tool, so exact numbers should be rechecked against the originals; the notes list what could not be fetched. The most useful finding: the same model's score swings a lot with the setting (Qwen3-4B GPQA-Diamond 41.7 off vs 55.9 on), and none of the sources covers cut-off replies, so my explanation of the 79.1% gap stays a guess. Qwen3.5-4B has no row in those three reports.
 
 ## Commands
 

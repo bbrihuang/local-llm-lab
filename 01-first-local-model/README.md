@@ -16,9 +16,9 @@ When a language model answers, is reading my prompt the same kind of work as wri
 | 1,000 tokens | 17,339 tok/s | 221 tok/s | 0.058 s |
 | 4,000 tokens | 17,324 tok/s | 193 tok/s | 0.231 s |
 
-[Prefill vs decode chart](results/prefill_vs_decode.png)
+![Prefill vs decode chart](results/prefill_vs_decode.png)
 
-[Time to first token chart](results/time_to_first_token.png)
+![Time to first token chart](results/time_to_first_token.png)
 
 Reading the prompt is about 80x faster per token than writing the answer.
 

@@ -80,7 +80,7 @@ I ran the app (public Gradio link) and asked for a to-do list. With the limit at
 
 ## Still open
 
-- **Readings:** the DiffusionGemma model card, the Hugging Face blog "Welcome Gemma 4", the Block Diffusion paper and Fast-dLLM.
+- **Readings:** summarized by Claude on 2026-10-17 and the notes reviewed by me (`notes/readings.md`): the DiffusionGemma model card, the Hugging Face blog "Welcome Gemma 4", the Block Diffusion paper and Fast-dLLM. Fetched through a summarizing tool, so check key numbers. Main caution from the notes: the vLLM recipe page measured the regular Gemma 4 26B-A4B at about 199 to 205 tok/s on one H100, against my 39.3, which supports my guess that my baseline was slow; so my 6.3x to 8.6x speedups are probably inflated, and against a fast baseline the gap could be nearer 2x to 6x. Time to first token was not measured by me; the recipe page reports it getting about 10x worse.
 - **Show the demo live to the group.** The app needs a rented big GPU, so it has to be started again from the notebook before the session (the download and loading took about 3 minutes for each model for me (161 and 164 s)).
 
 ## How to run it again

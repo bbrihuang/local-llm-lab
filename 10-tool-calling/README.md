@@ -76,7 +76,7 @@ BrowseComp and Terminal-Bench numbers depend on the context strategy or harness,
 
 ## Still open
 
-- Readings: HF Evaluation Guidebook ("2025 evaluations for useful models", tool-calling and assistant sections), the GLM-5 paper's agentic evaluation sections, the DeepSeek-V4 paper's agentic results, NVIDIA's Nemotron 3 Super introduction. The agent only pulled numbers from them; I haven't read them in full.
+- Readings: summarized by Claude on 2026-10-17 and the notes reviewed by me (`notes/readings.md`): the HF Evaluation Guidebook, the GLM-5 paper, DeepSeek-V4 (agentic scores come from its model card, not the paper) and NVIDIA's Nemotron 3 Super post. The pages came through a page-summarizing tool, so key numbers should be rechecked. No source says anything about quantization and tool calling, so the links to my results in the notes are mostly guesses. BFCL and GAIA have no scores in any of them.
 - A fairer version of the test that accepts correct answers without the tool, and a run with thinking on.
 
 ## Commands
