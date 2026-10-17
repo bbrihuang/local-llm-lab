@@ -1,0 +1,137 @@
+{
+  "results": {
+    "humaneval_qwen": {
+      "name": "humaneval_qwen",
+      "alias": "humaneval_qwen",
+      "sample_len": 164,
+      "pass_at_1,none": 0.8048780487804879,
+      "pass_at_1_stderr,none": 0.031040185251388342,
+      "no_code_block,none": 0.1524390243902439,
+      "no_code_block_stderr,none": 0.028153977176919323
+    }
+  },
+  "group_subtasks": {},
+  "configs": {
+    "humaneval_qwen": {
+      "task": "humaneval_qwen",
+      "dataset_path": "openai/openai_humaneval",
+      "test_split": "test",
+      "doc_to_text": "def he_text(doc):\n    return f\"{INSTRUCTION}\\n\\n```python\\n{doc['prompt'].strip()}\\n```\"\n",
+      "doc_to_target": "{{canonical_solution}}",
+      "unsafe_code": false,
+      "process_results": "def he_results(doc, results):\n    code = extract_code(results[0], doc[\"entry_point\"])\n    if code is None:\n        return {\"pass_at_1\": 0, \"no_code_block\": 1}\n    return {\"pass_at_1\": int(run_program(build_program(doc, code))), \"no_code_block\": 0}\n",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": null,
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "<function he_text at 0x71a920731940>",
+        "doc_to_choice": null,
+        "doc_to_target": "{{canonical_solution}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "pass_at_1",
+          "aggregation": "mean",
+          "higher_is_better": true
+        },
+        {
+          "metric": "no_code_block",
+          "aggregation": "mean",
+          "higher_is_better": false
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [],
+        "max_gen_toks": 14000,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "presence_penalty": 1.5
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 1.0,
+        "model": "qwen3.5-4b",
+        "base_url": "http://host.docker.internal:8080/v1/chat/completions",
+        "num_concurrent": 4,
+        "max_retries": 3,
+        "timeout": 3600,
+        "config_source": "tasks/humaneval_qwen.yaml"
+      }
+    }
+  },
+  "versions": {
+    "humaneval_qwen": 1.0
+  },
+  "n-shot": {
+    "humaneval_qwen": 0
+  },
+  "higher_is_better": {
+    "humaneval_qwen": {
+      "pass_at_1": true,
+      "no_code_block": false
+    }
+  },
+  "n-samples": {
+    "humaneval_qwen": {
+      "original": 164,
+      "effective": 164
+    }
+  },
+  "config": {
+    "model": "local-chat-completions",
+    "model_args": {
+      "model": "qwen3.5-4b",
+      "base_url": "http://host.docker.internal:8080/v1/chat/completions",
+      "num_concurrent": 4,
+      "max_retries": 3,
+      "timeout": 3600
+    },
+    "batch_size": 1,
+    "batch_sizes": [],
+    "device": "cuda:0",
+    "use_cache": null,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": {
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "top_k": 20,
+      "presence_penalty": 1.5,
+      "max_gen_toks": 14000
+    },
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": null,
+  "date": 1792176779.8469858,
+  "pretty_env_info": "N/A (torch not installed)",
+  "transformers_version": "N/A",
+  "lm_eval_version": "0.4.13",
+  "upper_git_hash": null,
+  "task_hashes": {
+    "humaneval_qwen": "3de85aac37a5380df146e7b15b4b0574a1c895740c29971a42a03edca15aa3e0"
+  },
+  "model_source": "local-chat-completions",
+  "model_name": "qwen3.5-4b",
+  "model_name_sanitized": "qwen3.5-4b",
+  "system_instruction": null,
+  "system_instruction_sha": null,
+  "fewshot_as_multiturn": true,
+  "chat_template": "",
+  "chat_template_sha": null,
+  "total_evaluation_time_seconds": "6150.790226972"
+}
