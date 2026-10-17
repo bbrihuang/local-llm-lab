@@ -1,0 +1,60 @@
+mode,task_id,function,why_it_failed
+instant,HumanEval/32,find_zero,AssertionError
+instant,HumanEval/55,fib,AssertionError
+instant,HumanEval/57,monotonic,AssertionError
+instant,HumanEval/65,circular_shift,AssertionError
+instant,HumanEval/88,sort_array,AssertionError
+instant,HumanEval/91,is_bored,AssertionError
+instant,HumanEval/93,encode,AssertionError
+instant,HumanEval/95,check_dict_case,AssertionError
+instant,HumanEval/96,count_up_to,TIMEOUT
+instant,HumanEval/101,words_string,AssertionError
+instant,HumanEval/115,max_fill,AssertionError
+instant,HumanEval/116,sort_array,SyntaxError
+instant,HumanEval/120,maximum,AssertionError
+instant,HumanEval/125,split_words,AssertionError
+instant,HumanEval/126,is_sorted,AssertionError
+instant,HumanEval/127,intersection,AssertionError
+instant,HumanEval/130,tri,AssertionError
+instant,HumanEval/132,is_nested,SyntaxError
+instant,HumanEval/134,check_if_last_char_is_a_letter,AssertionError
+instant,HumanEval/135,can_arrange,AssertionError
+instant,HumanEval/139,special_factorial,AssertionError
+instant,HumanEval/140,fix_spaces,AssertionError
+instant,HumanEval/145,order_by_points,AssertionError
+instant,HumanEval/148,bf,AssertionError
+instant,HumanEval/159,eat,NameError
+instant,HumanEval/160,do_algebra,IndexError
+instant,HumanEval/163,generate_integers,AssertionError
+thinking,HumanEval/1,separate_paren_groups,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/6,parse_nested_parens,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/9,rolling_max,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/10,make_palindrome,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/25,factorize,AssertionError
+thinking,HumanEval/32,find_zero,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/35,max_element,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/37,sort_even,AssertionError
+thinking,HumanEval/40,triples_sum_to_zero,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/46,fib4,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/54,same_chars,AssertionError
+thinking,HumanEval/59,largest_prime_factor,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/76,is_simple_power,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/83,starts_one_ends,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/86,anti_shuffle,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/88,sort_array,AssertionError
+thinking,HumanEval/91,is_bored,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/93,encode,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/105,by_length,AssertionError
+thinking,HumanEval/113,odd_count,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/115,max_fill,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/118,get_closest_vowel,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/127,intersection,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/129,minPath,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/130,tri,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/132,is_nested,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/135,can_arrange,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/140,fix_spaces,ImportError
+thinking,HumanEval/145,order_by_points,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/147,get_max_triples,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/156,int_to_mini_roman,no code block (empty reply: ran out of tokens while thinking)
+thinking,HumanEval/163,generate_integers,AssertionError

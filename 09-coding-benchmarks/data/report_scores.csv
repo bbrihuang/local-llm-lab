@@ -1,0 +1,54 @@
+benchmark,model,score,mode,source_url,note
+LiveCodeBench v5 (window 2024.10-2025.02),Qwen3-235B-A22B,70.7,thinking,https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Tables 11/12; self-reported"
+LiveCodeBench v5 (window 2024.10-2025.02),Qwen3-235B-A22B,35.3,non-thinking,https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Tables 11/12; self-reported"
+LiveCodeBench v5 (window 2024.10-2025.02),Qwen3-32B,65.7,thinking,https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Tables 13/14; self-reported"
+LiveCodeBench v5 (window 2024.10-2025.02),Qwen3-32B,31.3,non-thinking,https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Tables 13/14; self-reported"
+LiveCodeBench v5 (window 2024.10-2025.02),Qwen3-8B,57.5,thinking,https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Table 17/18; self-reported"
+LiveCodeBench v5 (window 2024.10-2025.02),Qwen3-8B,22.8,non-thinking,https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Table 17/18; self-reported"
+LiveCodeBench v5 (window 2024.10-2025.02),Qwen3-4B,54.2,thinking,https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Table 17/18; self-reported"
+LiveCodeBench v5 (window 2024.10-2025.02),Qwen3-4B,21.3,non-thinking,https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Table 17/18; self-reported"
+EvalPlus (HumanEval/MBPP family composite; exact definition not checked),Qwen3-235B-A22B-Base,77.6,base model (not thinking/non-thinking),https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Table 3; self-reported"
+MBPP (3-shot),Qwen3-235B-A22B-Base,81.4,base model (not thinking/non-thinking),https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Table 3; self-reported"
+EvalPlus (HumanEval/MBPP family composite; exact definition not checked),Qwen3-32B-Base,72.05,base model (not thinking/non-thinking),https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Table 4; self-reported"
+MBPP (3-shot),Qwen3-32B-Base,78.2,base model (not thinking/non-thinking),https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Table 4; self-reported"
+EvalPlus (HumanEval/MBPP family composite; exact definition not checked),Qwen3-8B-Base,67.65,base model (not thinking/non-thinking),https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Table 6; self-reported"
+MBPP (3-shot),Qwen3-8B-Base,69.8,base model (not thinking/non-thinking),https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Table 6; self-reported"
+EvalPlus (HumanEval/MBPP family composite; exact definition not checked),Qwen3-4B-Base,63.53,base model (not thinking/non-thinking),https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Table 7; self-reported"
+MBPP (3-shot),Qwen3-4B-Base,67.0,base model (not thinking/non-thinking),https://arxiv.org/pdf/2505.09388,"Qwen3 technical report, Table 7; self-reported"
+LiveCodeBench v6,Qwen3.5-397B-A17B,83.6,not stated (Qwen3.5 thinks by default),https://huggingface.co/Qwen/Qwen3.5-397B-A17B,model card; no scaffold footnote; self-reported
+SWE-bench Verified,Qwen3.5-397B-A17B,76.4,agentic (scaffold not stated),https://huggingface.co/Qwen/Qwen3.5-397B-A17B,model card; no scaffold footnote; self-reported
+Terminal-Bench 2.0 (card says 'Terminal Bench 2'),Qwen3.5-397B-A17B,52.5,agentic (harness not stated),https://huggingface.co/Qwen/Qwen3.5-397B-A17B,model card; self-reported
+SciCode,Qwen3.5-397B-A17B,not listed,,https://huggingface.co/Qwen/Qwen3.5-397B-A17B,no SciCode row on the card
+LiveCodeBench v6,Qwen3.5-4B,55.8,not stated (thinking default; settings not tied to this row),https://huggingface.co/Qwen/Qwen3.5-4B,model card Language table; self-reported; reachable via WebFetch
+OJBench,Qwen3.5-4B,24.1,not stated,https://huggingface.co/Qwen/Qwen3.5-4B,"model card; competitive-programming benchmark, not in the requested list; self-reported"
+LiveCodeBench v6,Qwen3.5-9B,65.6,not stated,https://huggingface.co/Qwen/Qwen3.5-4B,"same card, for comparison; self-reported"
+SWE-bench Verified / Terminal-Bench 2.0 / SciCode,Qwen3.5-4B,not listed,,https://huggingface.co/Qwen/Qwen3.5-4B,the 4B card has only LiveCodeBench v6 and OJBench as coding rows
+LiveCodeBench (Pass@1; version not stated),DeepSeek-V4-Flash,55.2,Non-Think,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+SWE-bench Verified (Resolved),DeepSeek-V4-Flash,73.7,Non-Think (agentic; harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Terminal-Bench 2.0 (Acc),DeepSeek-V4-Flash,49.1,Non-Think (agentic; harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+LiveCodeBench (Pass@1; version not stated),DeepSeek-V4-Flash,88.4,High reasoning,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+SWE-bench Verified (Resolved),DeepSeek-V4-Flash,78.6,High reasoning (agentic; harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Terminal-Bench 2.0 (Acc),DeepSeek-V4-Flash,56.6,High reasoning (agentic; harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+LiveCodeBench (Pass@1; version not stated),DeepSeek-V4-Flash,91.6,Max reasoning,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+SWE-bench Verified (Resolved),DeepSeek-V4-Flash,79.0,Max reasoning (agentic; harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Terminal-Bench 2.0 (Acc),DeepSeek-V4-Flash,56.9,Max reasoning (agentic; harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+LiveCodeBench (Pass@1; version not stated),DeepSeek-V4-Pro,56.8,Non-Think,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+SWE-bench Verified (Resolved),DeepSeek-V4-Pro,73.6,Non-Think (agentic; harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Terminal-Bench 2.0 (Acc),DeepSeek-V4-Pro,59.1,Non-Think (agentic; harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+LiveCodeBench (Pass@1; version not stated),DeepSeek-V4-Pro,89.8,High reasoning,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+SWE-bench Verified (Resolved),DeepSeek-V4-Pro,79.4,High reasoning (agentic; harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Terminal-Bench 2.0 (Acc),DeepSeek-V4-Pro,63.3,High reasoning (agentic; harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+LiveCodeBench (Pass@1; version not stated),DeepSeek-V4-Pro,93.5,Max reasoning,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+SWE-bench Verified (Resolved),DeepSeek-V4-Pro,80.6,Max reasoning (agentic; harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Terminal-Bench 2.0 (Acc),DeepSeek-V4-Pro,67.9,Max reasoning (agentic; harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+"HumanEval (Pass@1, 0-shot)",DeepSeek-V4-Flash-Base,69.5,base model,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card base-model table; V3.2-Base 62.8; self-reported
+"HumanEval (Pass@1, 0-shot)",DeepSeek-V4-Pro-Base,76.8,base model,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card base-model table; self-reported
+SciCode / MBPP,DeepSeek-V4,not listed,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,"not on the model card (card also lists SWE Pro, SWE Multilingual, Codeforces, BigCodeBench, not copied here except as noted)"
+SWE-bench Verified,GLM-5,77.8,"agentic: OpenHands, tailored prompt, temp 0.7, top_p 0.95, 200K context",https://huggingface.co/zai-org/GLM-5 and https://arxiv.org/pdf/2602.15763,"Table 7 / model card; self-reported. HF card also lists 72.8 from a 'high reasoning, official' run on swebench.com"
+Terminal-Bench 2.0,GLM-5,56.2,"agentic: Terminus-2 (2h timeout, 128K context)",https://arxiv.org/pdf/2602.15763,Table 7; 60.7 on the verified version with ambiguous instructions fixed; self-reported
+Terminal-Bench 2.0,GLM-5,56.2,"agentic: Claude Code 2.1.14 think mode, avg of 5 runs",https://arxiv.org/pdf/2602.15763,Table 7; 61.1 on the verified version; self-reported
+SWE-bench Verified,Claude Opus 4.5 (as reported in GLM-5 paper),80.9,"agentic, OpenHands per paper footnote for GLM-5 (others' setup unconfirmed)",https://arxiv.org/pdf/2602.15763,Table 7 comparison column; Terminal-Bench 2.0 Terminus-2 / Claude Code = 59.3 / 57.9
+SWE-bench Verified,GPT-5.2 (xhigh) (as reported in GLM-5 paper),80.0,"agentic, OpenHands per paper footnote for GLM-5 (others' setup unconfirmed)",https://arxiv.org/pdf/2602.15763,Table 7 comparison column; Terminal-Bench 2.0 Terminus-2 / Claude Code = 54.0 / -
+SWE-bench Verified,Gemini 3 Pro (as reported in GLM-5 paper),76.2,"agentic, OpenHands per paper footnote for GLM-5 (others' setup unconfirmed)",https://arxiv.org/pdf/2602.15763,Table 7 comparison column; Terminal-Bench 2.0 Terminus-2 / Claude Code = 54.2 / -
+SWE-bench Verified,DeepSeek-V3.2 (as reported in GLM-5 paper),73.1,"agentic, OpenHands per paper footnote for GLM-5 (others' setup unconfirmed)",https://arxiv.org/pdf/2602.15763,Table 7 comparison column; Terminal-Bench 2.0 Terminus-2 / Claude Code = 39.3 / 46.4
+LiveCodeBench / SciCode / HumanEval / MBPP,GLM-5,not listed,,https://arxiv.org/pdf/2602.15763,GLM-5 paper and card list no scores for these (SciCode only appears in an Artificial Analysis figure with no number)
