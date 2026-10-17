@@ -1,0 +1,16 @@
+case,kind,prompt,q2_k instant correct,q2_k_imat instant correct,q4_k_m instant correct
+1,single,What is 1847 * 23?,3/5,5/5,5/5
+2,single,"What is 15% of 2,480?",0/5,5/5,1/5
+3,single,What's the weather in Paris right now?,2/5,3/5,5/5
+4,single,How hot is it in Austin right now? Give me the answer in Fahrenheit.,3/5,1/5,5/5
+5,single,Find my file called budget_2025.xlsx.,2/5,5/5,5/5
+6,single,Look in my Documents folder for anything about the lease.,0/5,5/5,5/5
+7,single,I bought 3 notebooks at $4.50 each and a pen for $1.25. What's the total?,1/5,5/5,5/5
+8,multi,What's the weather in Tokyo and in London?,0/5,0/5,5/5
+9,multi,"What is 12 * 12, and what's the weather in Boston?",0/5,5/5,5/5
+10,multi,Search my files for 'invoice' and also for 'receipt'.,0/5,5/5,5/5
+11,none,What is the capital of France?,5/5,5/5,5/5
+12,none,Explain in one sentence what a calculator is.,5/5,5/5,5/5
+13,none,Is it usually warmer in Spain than in Norway in July?,4/5,1/5,5/5
+14,none,What's the weather like?,5/5,5/5,5/5
+15,none,Tell me a short story about a filing cabinet.,5/5,5/5,5/5

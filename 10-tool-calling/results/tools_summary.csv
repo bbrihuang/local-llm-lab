@@ -1,0 +1,4 @@
+run,mode,tries,correct_pct,right_tool_pct,valid_json_pct,single_correct_pct,multi_correct_pct,none_correct_pct,median_seconds
+q2_k,instant,75,46.7,52.0,100.0,31.4,0.0,96.0,0.49
+q2_k_imat,instant,75,80.0,80.0,100.0,82.9,66.7,84.0,0.5
+q4_k_m,instant,75,94.7,94.7,100.0,88.6,100.0,100.0,0.5
