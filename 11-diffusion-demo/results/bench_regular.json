@@ -1,0 +1,92 @@
+{
+ "max_new_tokens": 1024,
+ "repeats": 3,
+ "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+ "torch": "2.11.0+cu130",
+ "rows": [
+  {
+   "model": "regular",
+   "prompt": "coffee-page",
+   "type": "page",
+   "prompt_tokens": 71,
+   "new_tokens_median": 1024,
+   "seconds_median": 26.049,
+   "tokens_per_s_median": 39.3,
+   "tokens_per_s_runs": [
+    39.2,
+    39.3,
+    39.4
+   ]
+  },
+  {
+   "model": "regular",
+   "prompt": "todo-app",
+   "type": "page",
+   "prompt_tokens": 74,
+   "new_tokens_median": 1024,
+   "seconds_median": 26.078,
+   "tokens_per_s_median": 39.3,
+   "tokens_per_s_runs": [
+    39.3,
+    39.4,
+    39.2
+   ]
+  },
+  {
+   "model": "regular",
+   "prompt": "pomodoro",
+   "type": "page",
+   "prompt_tokens": 68,
+   "new_tokens_median": 1024,
+   "seconds_median": 26.049,
+   "tokens_per_s_median": 39.3,
+   "tokens_per_s_runs": [
+    39.3,
+    39.3,
+    39.3
+   ]
+  },
+  {
+   "model": "regular",
+   "prompt": "explain",
+   "type": "chat",
+   "prompt_tokens": 29,
+   "new_tokens_median": 702,
+   "seconds_median": 17.854,
+   "tokens_per_s_median": 39.3,
+   "tokens_per_s_runs": [
+    39.3,
+    39.3,
+    39.3
+   ]
+  },
+  {
+   "model": "regular",
+   "prompt": "python-fn",
+   "type": "chat",
+   "prompt_tokens": 31,
+   "new_tokens_median": 557,
+   "seconds_median": 14.213,
+   "tokens_per_s_median": 39.2,
+   "tokens_per_s_runs": [
+    39.2,
+    39.4,
+    39.1
+   ]
+  },
+  {
+   "model": "regular",
+   "prompt": "summary",
+   "type": "chat",
+   "prompt_tokens": 35,
+   "new_tokens_median": 447,
+   "seconds_median": 11.386,
+   "tokens_per_s_median": 39.3,
+   "tokens_per_s_runs": [
+    39.3,
+    39.3,
+    39.2
+   ]
+  }
+ ]
+}

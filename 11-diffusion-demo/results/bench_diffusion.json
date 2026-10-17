@@ -1,0 +1,130 @@
+{
+ "max_new_tokens": 1024,
+ "repeats": 3,
+ "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+ "torch": "2.11.0+cu130",
+ "rows": [
+  {
+   "model": "diffusion",
+   "prompt": "coffee-page",
+   "type": "page",
+   "prompt_tokens": 67,
+   "new_tokens_median": 1024,
+   "seconds_median": 4.141,
+   "tokens_per_s_median": 247.3,
+   "tokens_per_s_runs": [
+    235.1,
+    303.9,
+    247.3
+   ],
+   "steps_per_canvas": [
+    13,
+    12,
+    10,
+    8
+   ],
+   "tokens_per_forward": 23.813953399658203
+  },
+  {
+   "model": "diffusion",
+   "prompt": "todo-app",
+   "type": "page",
+   "prompt_tokens": 70,
+   "new_tokens_median": 1024,
+   "seconds_median": 3.014,
+   "tokens_per_s_median": 339.8,
+   "tokens_per_s_runs": [
+    289.0,
+    381.5,
+    339.8
+   ],
+   "steps_per_canvas": [
+    7,
+    7,
+    6,
+    12
+   ],
+   "tokens_per_forward": 32.0
+  },
+  {
+   "model": "diffusion",
+   "prompt": "pomodoro",
+   "type": "page",
+   "prompt_tokens": 64,
+   "new_tokens_median": 1024,
+   "seconds_median": 3.87,
+   "tokens_per_s_median": 264.6,
+   "tokens_per_s_runs": [
+    235.9,
+    318.8,
+    264.6
+   ],
+   "steps_per_canvas": [
+    13,
+    10,
+    11,
+    8
+   ],
+   "tokens_per_forward": 24.380952835083008
+  },
+  {
+   "model": "diffusion",
+   "prompt": "explain",
+   "type": "chat",
+   "prompt_tokens": 25,
+   "new_tokens_median": 622,
+   "seconds_median": 4.228,
+   "tokens_per_s_median": 147.1,
+   "tokens_per_s_runs": [
+    122.4,
+    155.5,
+    147.1
+   ],
+   "steps_per_canvas": [
+    13,
+    14,
+    12
+   ],
+   "tokens_per_forward": 17.256410598754883
+  },
+  {
+   "model": "diffusion",
+   "prompt": "python-fn",
+   "type": "chat",
+   "prompt_tokens": 27,
+   "new_tokens_median": 485,
+   "seconds_median": 2.767,
+   "tokens_per_s_median": 175.3,
+   "tokens_per_s_runs": [
+    211.7,
+    175.3,
+    103.6
+   ],
+   "steps_per_canvas": [
+    12,
+    12,
+    3
+   ],
+   "tokens_per_forward": 19.037036895751953
+  },
+  {
+   "model": "diffusion",
+   "prompt": "summary",
+   "type": "chat",
+   "prompt_tokens": 31,
+   "new_tokens_median": 526,
+   "seconds_median": 3.633,
+   "tokens_per_s_median": 145.6,
+   "tokens_per_s_runs": [
+    160.0,
+    130.7,
+    145.6
+   ],
+   "steps_per_canvas": [
+    20,
+    20
+   ],
+   "tokens_per_forward": 11.774999618530273
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+prompt,type,diffusion_tok_s,regular_tok_s,speedup,diffusion_tokens,regular_tokens,diffusion_steps_per_canvas,diffusion_tokens_per_forward
+coffee-page,page,247.3,39.3,6.29,1024,1024,13 12 10 8,23.813953399658203
+todo-app,page,339.8,39.3,8.65,1024,1024,7 7 6 12,32.0
+pomodoro,page,264.6,39.3,6.73,1024,1024,13 10 11 8,24.380952835083008
+explain,chat,147.1,39.3,3.74,622,702,13 14 12,17.256410598754883
+python-fn,chat,175.3,39.2,4.47,485,557,12 12 3,19.037036895751953
+summary,chat,145.6,39.3,3.7,526,447,20 20,11.774999618530273
