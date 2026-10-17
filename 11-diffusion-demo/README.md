@@ -24,6 +24,7 @@ The code was written by Claude. I ran every step on Colab and pasted back the ou
 | GPU | NVIDIA RTX PRO 6000 Blackwell Server Edition, 97,887 MiB (what Colab calls the "G4" GPU) |
 | Models | DiffusionGemma 26B-A4B-it (25.2B parameters, 3.8B active) and Gemma 4 26B-A4B-it, both bf16, about 50 GB each |
 | Libraries | transformers 5.20.1, torch 2.11.0+cu130, accelerate 1.15.0, gradio 6.30.0 |
+| Cost | about 5.4 Colab compute units for the whole session (100 before, 94.59 after; the G4 runs at about 8.9 units per hour) |
 | Limit | 1,024 new tokens, thinking off, one request at a time |
 | Sampling | DiffusionGemma: its default entropy-bounded sampler (up to 48 steps per canvas). Regular model: greedy decoding |
 
@@ -81,7 +82,6 @@ I ran the app (public Gradio link) and asked for a to-do list. With the limit at
 
 - **Readings:** the DiffusionGemma model card, the Hugging Face blog "Welcome Gemma 4", the Block Diffusion paper and Fast-dLLM.
 - **Show the demo live to the group.** The app needs a rented big GPU, so it has to be started again from the notebook before the session (the download and loading took about 3 minutes for each model for me (161 and 164 s)).
-- The compute units used for the whole run are not recorded here yet.
 
 ## How to run it again
 
