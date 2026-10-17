@@ -8,7 +8,7 @@ A benchmark score is only useful if you know what the test asks, how it is score
 
 ## What I did
 
-1. **Tried the questions.** `sample_questions.py` picked 3 real questions from each of MMLU, MMLU-Pro, GPQA-Diamond, Humanity's Last Exam (HLE), ARC-Challenge, HellaSwag, WinoGrande, SimpleQA, IFEval and RULER (30 questions). `ask_model.py` asked Qwen3.5-4B Q4_K_M all 30 with thinking off and then on. I checked the free-text ones by hand (SimpleQA, HLE, and a few others), listed in `results/hand_checks.csv`. `quiz.py` lets me answer the same questions myself; I haven't done that yet (see "Still open").
+1. **Tried the questions.** `sample_questions.py` picked 3 real questions from each of MMLU, MMLU-Pro, GPQA-Diamond, Humanity's Last Exam (HLE), ARC-Challenge, HellaSwag, WinoGrande, SimpleQA, IFEval and RULER (30 questions). `ask_model.py` asked Qwen3.5-4B Q4_K_M all 30 with thinking off and then on. I checked the free-text ones by hand (SimpleQA, HLE, and a few others), listed in `results/hand_checks.csv`. I then answered the same questions myself with `quiz.py` (see "Me against the model").
 2. **Ran lm-evaluation-harness** (0.4.13, `local-chat-completions` against `llama-server`, 4 requests at a time). `run_harness.py` starts the server, runs the harness and stops the server. The tasks are in `tasks/`: 200 ARC-Challenge questions, and 15 MMLU-Pro questions from each of 14 subjects (210). The prompt has no examples and ends with "The answer is (X)"; the last match counts. Unanswered replies count as wrong. Sampling follows Qwen's settings: instant temperature 0.7, top-p 0.8; thinking temperature 1.0, top-p 0.95; both top-k 20 and presence penalty 1.5. In the harness, replies are capped at 4,096 tokens with thinking off and 14,000 with thinking on.
 3. **Researched all ten benchmarks** (`data/benchmarks.csv`, with links in `data/benchmarks_sources.md`): when released, who made it, what it tests, how it is scored, human baseline, best score, and when it was maxed out. `timeline.py` drew the chart.
 4. **Wrote one card per benchmark**: [cards.md](cards.md).
@@ -71,6 +71,26 @@ Full table: [results/own_questions_summary.csv](results/own_questions_summary.cs
 
 "Maxed out" means a model matched the human baseline, or scored within a few points of the highest score that is possible, given label errors. I used the first date I could find for that. Where the dataset has no human baseline, I used the first 90%+ score, and I marked those "near".
 
+### Me against the model (the 30 questions)
+
+I answered the same questions with `quiz.py`, no looking things up. Qwen's columns are right out of 3 per benchmark. For IFEval and RULER I only read the question and pressed Enter (they ask the model to write a long reply or read a 7,000-word text), so I have no score for those six.
+
+| Benchmark | Me | Qwen thinking off | Qwen thinking on |
+|---|---|---|---|
+| MMLU | 1 | 2 | 2 |
+| MMLU-Pro | 0 | 3 | 3 |
+| GPQA-Diamond | 3 | 2 | 3 |
+| Humanity's Last Exam | 0 | 1 | 0 |
+| ARC-Challenge | 3 | 3 | 3 |
+| HellaSwag | 1 | 2 | 3 |
+| WinoGrande | 3 | 3 | 3 |
+| SimpleQA | 1 | 1 | 0 |
+| **Total of these 8 (24 questions)** | **12** | **17** | **17** |
+
+With 3 questions per benchmark this is a feel, not a measurement: one question is about 4 points on the total. What the table shows: the model is well ahead of me on MMLU-Pro (0 of 3 for me against 3 of 3) and slightly ahead overall (12 against 17 of 24); I matched or beat it on GPQA-Diamond with thinking off (3 against 2); and Humanity's Last Exam was 0 of 3 for me and for thinking on, 1 of 3 for thinking off. The HLE and GPQA question texts are private and are not in this repo; `results/my_answers.csv` stores only letters for the multiple-choice ones and "(answered)" for the free-text HLE ones.
+
+I ran the quiz in three parts (saved as `my_answers_part1.csv` and so on on my PC): questions 1 to 22 first, then SimpleQA, IFEval and RULER, then the three HLE questions again. In the first part I had typed letters on the two free-text HLE questions, so those answers were replaced by the later run. For SimpleQA question 1, I answered 2012 in the first run (right) and left it blank in the second; the file uses the first answer. The merged file was put together from my pasted terminal output, not by a script on my PC.
+
 ## What it means
 
 **The gap to Qwen's 79.1% is mostly unfinished answers plus noise.** My harness scores are 5 to 9 points under it, and the standard error on 210 questions is about 3 points. In each run, 14 to 18 of the 210 replies ended before the model wrote "The answer is (X)", and those count as wrong. Without them, the scores are 76.6% to 80.3%. I'm not claiming that's the fair score, since the cut-off questions are probably the hard ones. What I take from it is that the model is probably close to Qwen's number, and that how you handle long replies moves the score by several points. Also: Qwen's model card doesn't say whether its 79.1% was measured with thinking on or off. I first thought it was thinking on, but the card doesn't say so.
@@ -96,12 +116,11 @@ Full table: [results/own_questions_summary.csv](results/own_questions_summary.cs
 - **Subsets, not full benchmarks.** 200 ARC-Challenge and 210 MMLU-Pro questions, not all 1,172 and 12,032. The official number uses all of them, with its own prompt, so even with no cut-offs I wouldn't expect an exact match.
 - **Q4_K_M is a 4-bit compression** of the model, which costs a little accuracy compared to Qwen's full-precision numbers (Task 3 measured about 0.4 perplexity points on WikiText-2).
 - **Top scores come from many places.** Several of the "best score" numbers in the cards are reported by the company that made the model, not independently checked. Cards mark which are which. The 96.0% for GPQA-Diamond and the 74.0% for SimpleQA are self-reported, and some aggregator sites list scores I couldn't confirm; the data file marks those "unconfirmed".
-- **Hand-checking is my judgement.** A few free-text answers (listed in `results/hand_checks.csv`) were marked by me, not a program. Two HLE answers with thinking on are still unjudged.
+- **Hand-checking is my judgement.** A few free-text answers (listed in `results/hand_checks.csv`) were marked by me, not a program. The two HLE answers with thinking on that were left open are now judged (both wrong, by me).
 
 ## Still open
 
-- **Quiz.** `quiz.py` so I can answer the same 30 questions and compare with the model. Not done yet.
-- **Two HLE answers** (thinking on) need my judgement: `python quiz.py --model-answers`.
+- **Nothing else from the hands-on part.** The quiz and the HLE judging are done (see "Me against the model").
 - **Readings**: summarized by Claude on 2026-10-17 and the notes reviewed by me (`notes/readings.md`): HF Evaluation Guidebook, LiveBench, The Leaderboard Illusion, Adding Error Bars to Evals, and the Qwen3, DeepSeek-V4 and GLM-5 benchmark tables. They were fetched through a page-summarizing tool, so exact numbers should be rechecked against the originals; the notes list what could not be fetched. The most useful finding: the same model's score swings a lot with the setting (Qwen3-4B GPQA-Diamond 41.7 off vs 55.9 on), and none of the sources covers cut-off replies, so my explanation of the 79.1% gap stays a guess. Qwen3.5-4B has no row in those three reports.
 
 ## Commands

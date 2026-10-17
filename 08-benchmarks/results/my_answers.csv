@@ -1,0 +1,31 @@
+benchmark,id,expected,my_answer,i_was_right
+MMLU,prehistory/10114,B,a,0
+MMLU,high_school_biology/2900,B,b,1
+MMLU,high_school_physics/4857,C,a,0
+MMLU-Pro,math/8871,I,b,0
+MMLU-Pro,economics/7513,A,c,0
+MMLU-Pro,health/6588,F,d,0
+GPQA-Diamond,rec5eA17Qr1ucNLUf,D,d,1
+GPQA-Diamond,rec9ubQihAh6g9bft,B,b,1
+GPQA-Diamond,rectXfsCM1dj4Kv2c,A,a,1
+Humanity's Last Exam,66ff31e8c604a3a87b0cdf62,(hidden),(answered),0
+Humanity's Last Exam,674490c88354817cce712062,(hidden),(answered),0
+Humanity's Last Exam,672037fcb27d565463a1dff2,B,F,0
+ARC-Challenge,Mercury_410807,B,b,1
+ARC-Challenge,Mercury_7009993,A,a,1
+ARC-Challenge,MCAS_2000_4_30,D,d,1
+HellaSwag,9849,A,b,0
+HellaSwag,1874,B,c,0
+HellaSwag,50463,D,d,1
+WinoGrande,validation/798,A,a,1
+WinoGrande,validation/741,A,a,1
+WinoGrande,validation/1033,A,a,1
+SimpleQA,767,2012,2012,1
+SimpleQA,2207,Lyudmila Zhuravlyova,ALbert Einstein,0
+SimpleQA,2608,137,29,0
+IFEval,2880,follows every instruction,(looked only),
+IFEval,3680,follows every instruction,(looked only),
+IFEval,3351,follows every instruction,(looked only),
+RULER,niah_single,7862135,(looked only),
+RULER,niah_multikey,8085007,(looked only),
+RULER,variable_tracking,LMYTY BXPOW WJNJC FLBFY,(looked only),
