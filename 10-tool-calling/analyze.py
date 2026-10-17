@@ -80,10 +80,10 @@ for i, s in enumerate(summary):
         ax.text(x, v + 1, f"{v:.0f}%", ha="center", fontsize=8)
 ax.set_xticks(range(len(groups)))
 ax.set_xticklabels(groups)
-ax.set_ylim(0, 112)
+ax.set_ylim(0, 125)
 ax.set_ylabel("Correct tries (%)")
 ax.set_title("Tool calling, Qwen3.5-4B: 15 requests x repeats")
-ax.legend(frameon=False)
+ax.legend(frameon=False, ncol=3, loc="upper center", fontsize=9)
 for side in ("top", "right"):
     ax.spines[side].set_visible(False)
 fig.tight_layout()

@@ -1,0 +1,101 @@
+benchmark,model,score,mode,source_url,note
+BFCL-V4,Qwen3.5-4B,50.3,model card default (thinking setting not stated),https://huggingface.co/Qwen/Qwen3.5-4B,"Qwen3.5-4B model card, General Agent table; self-reported"
+TAU2-Bench,Qwen3.5-4B,79.9,model card default (user simulator not stated),https://huggingface.co/Qwen/Qwen3.5-4B,Qwen3.5-4B model card; official setup except airline uses Claude Opus 4.5 system card fixes; self-reported
+BFCL-V4,Qwen3.5-9B,66.1,model card default (thinking setting not stated),https://huggingface.co/Qwen/Qwen3.5-4B,"Qwen3.5-4B model card, General Agent table; self-reported"
+TAU2-Bench,Qwen3.5-9B,79.1,model card default (user simulator not stated),https://huggingface.co/Qwen/Qwen3.5-4B,Qwen3.5-4B model card; official setup except airline uses Claude Opus 4.5 system card fixes; self-reported
+BFCL-V4,Qwen3-Next-80B-A3B-Thinking,49.7,model card default (thinking setting not stated),https://huggingface.co/Qwen/Qwen3.5-4B,"Qwen3.5-4B model card, General Agent table; self-reported"
+TAU2-Bench,Qwen3-Next-80B-A3B-Thinking,57.4,model card default (user simulator not stated),https://huggingface.co/Qwen/Qwen3.5-4B,Qwen3.5-4B model card; official setup except airline uses Claude Opus 4.5 system card fixes; self-reported
+BFCL-V4,Qwen3-30B-A3B-Thinking-2507,42.4,model card default (thinking setting not stated),https://huggingface.co/Qwen/Qwen3.5-4B,"Qwen3.5-4B model card, General Agent table; self-reported"
+TAU2-Bench,Qwen3-30B-A3B-Thinking-2507,41.9,model card default (user simulator not stated),https://huggingface.co/Qwen/Qwen3.5-4B,Qwen3.5-4B model card; official setup except airline uses Claude Opus 4.5 system card fixes; self-reported
+BrowseComp / Terminal-Bench 2.0 / MCP / GAIA,Qwen3.5-4B,not listed,,https://huggingface.co/Qwen/Qwen3.5-4B,"not on the 4B card (card also has VITA-Bench 22.0 and DeepPlanning 17.6, not copied)"
+BFCL-V4,Qwen3.5-397B-A17B,72.9,model card default,https://huggingface.co/Qwen/Qwen3.5-397B-A17B,Qwen3.5-397B-A17B model card; self-reported
+TAU2-Bench,Qwen3.5-397B-A17B,86.7,model card default,https://huggingface.co/Qwen/Qwen3.5-397B-A17B,Qwen3.5-397B-A17B model card; self-reported
+Tool Decathlon,Qwen3.5-397B-A17B,38.3,model card default,https://huggingface.co/Qwen/Qwen3.5-397B-A17B,Qwen3.5-397B-A17B model card; self-reported
+MCP-Mark,Qwen3.5-397B-A17B,46.1,model card default,https://huggingface.co/Qwen/Qwen3.5-397B-A17B,"Qwen3.5-397B-A17B model card; self-reported; GitHub MCP server v0.30.3, Playwright responses truncated at 32k tokens"
+Terminal Bench 2,Qwen3.5-397B-A17B,52.5,model card default,https://huggingface.co/Qwen/Qwen3.5-397B-A17B,Qwen3.5-397B-A17B model card; self-reported
+BrowseComp,Qwen3.5-397B-A17B,69.0,simple context-folding (256k),https://huggingface.co/Qwen/Qwen3.5-397B-A17B,model card; self-reported
+BrowseComp,Qwen3.5-397B-A17B,78.6,discard-all context strategy,https://huggingface.co/Qwen/Qwen3.5-397B-A17B,model card; same strategy as DeepSeek-V3.2 and Kimi K2.5; self-reported
+BFCL-V4,GPT5.2 (as reported in Qwen3.5-397B card),63.1,,https://huggingface.co/Qwen/Qwen3.5-397B-A17B,comparison column; self-reported by Qwen
+TAU2-Bench,GPT5.2 (as reported in Qwen3.5-397B card),87.1,,https://huggingface.co/Qwen/Qwen3.5-397B-A17B,comparison column; self-reported by Qwen
+BFCL-V4,Claude 4.5 Opus (as reported in Qwen3.5-397B card),77.5,,https://huggingface.co/Qwen/Qwen3.5-397B-A17B,comparison column; self-reported by Qwen
+TAU2-Bench,Claude 4.5 Opus (as reported in Qwen3.5-397B card),91.6,,https://huggingface.co/Qwen/Qwen3.5-397B-A17B,comparison column; self-reported by Qwen
+BFCL-V4,Gemini-3 Pro (as reported in Qwen3.5-397B card),72.5,,https://huggingface.co/Qwen/Qwen3.5-397B-A17B,comparison column; self-reported by Qwen
+TAU2-Bench,Gemini-3 Pro (as reported in Qwen3.5-397B card),85.4,,https://huggingface.co/Qwen/Qwen3.5-397B-A17B,comparison column; self-reported by Qwen
+GAIA,Qwen3.5,not listed,,https://huggingface.co/Qwen/Qwen3.5-397B-A17B,GAIA is not on the Qwen3.5 cards
+Terminal Bench 2.0 (Acc),DeepSeek-V4-Flash,49.1,Non-Think (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+MCPAtlas (Pass@1),DeepSeek-V4-Flash,64.0,Non-Think (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Toolathlon (Pass@1),DeepSeek-V4-Flash,40.7,Non-Think (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Terminal Bench 2.0 (Acc),DeepSeek-V4-Flash,56.6,High (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+BrowseComp (Pass@1),DeepSeek-V4-Flash,53.5,High (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+MCPAtlas (Pass@1),DeepSeek-V4-Flash,67.4,High (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Toolathlon (Pass@1),DeepSeek-V4-Flash,43.5,High (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Terminal Bench 2.0 (Acc),DeepSeek-V4-Flash,56.9,Max (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+BrowseComp (Pass@1),DeepSeek-V4-Flash,73.2,Max (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+MCPAtlas (Pass@1),DeepSeek-V4-Flash,69.0,Max (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Toolathlon (Pass@1),DeepSeek-V4-Flash,47.8,Max (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Terminal Bench 2.0 (Acc),DeepSeek-V4-Pro,59.1,Non-Think (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+MCPAtlas (Pass@1),DeepSeek-V4-Pro,69.4,Non-Think (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Toolathlon (Pass@1),DeepSeek-V4-Pro,46.3,Non-Think (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Terminal Bench 2.0 (Acc),DeepSeek-V4-Pro,63.3,High (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+BrowseComp (Pass@1),DeepSeek-V4-Pro,80.4,High (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+MCPAtlas (Pass@1),DeepSeek-V4-Pro,74.2,High (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Toolathlon (Pass@1),DeepSeek-V4-Pro,49.0,High (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Terminal Bench 2.0 (Acc),DeepSeek-V4-Pro,67.9,Max (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+BrowseComp (Pass@1),DeepSeek-V4-Pro,83.4,Max (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+MCPAtlas (Pass@1),DeepSeek-V4-Pro,73.6,Max (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+Toolathlon (Pass@1),DeepSeek-V4-Pro,51.8,Max (harness not stated),https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,model card table; self-reported
+BFCL / tau-bench / tau2 / MCP-Universe / GAIA,DeepSeek-V4,not listed,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,none of these appear on the model card; I did not find a separate technical report
+Terminal Bench 2.0 (Acc),Claude Opus-4.6 Max (as reported in DeepSeek-V4 card),65.4,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+BrowseComp (Pass@1),Claude Opus-4.6 Max (as reported in DeepSeek-V4 card),83.7,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+MCPAtlas Public (Pass@1),Claude Opus-4.6 Max (as reported in DeepSeek-V4 card),73.8,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+Toolathlon (Pass@1),Claude Opus-4.6 Max (as reported in DeepSeek-V4 card),47.2,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+Terminal Bench 2.0 (Acc),GPT-5.4 xHigh (as reported in DeepSeek-V4 card),75.1,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+BrowseComp (Pass@1),GPT-5.4 xHigh (as reported in DeepSeek-V4 card),82.7,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+MCPAtlas Public (Pass@1),GPT-5.4 xHigh (as reported in DeepSeek-V4 card),67.2,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+Toolathlon (Pass@1),GPT-5.4 xHigh (as reported in DeepSeek-V4 card),54.6,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+Terminal Bench 2.0 (Acc),Gemini-3.1-Pro High (as reported in DeepSeek-V4 card),68.5,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+BrowseComp (Pass@1),Gemini-3.1-Pro High (as reported in DeepSeek-V4 card),85.9,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+MCPAtlas Public (Pass@1),Gemini-3.1-Pro High (as reported in DeepSeek-V4 card),69.2,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+Toolathlon (Pass@1),Gemini-3.1-Pro High (as reported in DeepSeek-V4 card),48.8,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+Terminal Bench 2.0 (Acc),Kimi K2.6 Thinking (as reported in DeepSeek-V4 card),66.7,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+BrowseComp (Pass@1),Kimi K2.6 Thinking (as reported in DeepSeek-V4 card),83.2,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+MCPAtlas Public (Pass@1),Kimi K2.6 Thinking (as reported in DeepSeek-V4 card),66.6,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+Toolathlon (Pass@1),Kimi K2.6 Thinking (as reported in DeepSeek-V4 card),50.0,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+Terminal Bench 2.0 (Acc),GLM-5.1 Thinking (as reported in DeepSeek-V4 card),63.5,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+BrowseComp (Pass@1),GLM-5.1 Thinking (as reported in DeepSeek-V4 card),79.3,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+MCPAtlas Public (Pass@1),GLM-5.1 Thinking (as reported in DeepSeek-V4 card),71.8,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+Toolathlon (Pass@1),GLM-5.1 Thinking (as reported in DeepSeek-V4 card),40.7,,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro,comparison column; self-reported by DeepSeek
+BrowseComp,GLM-5,62.0,no context management (discard-all),https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7; self-reported
+BrowseComp,GLM-5,75.9,with GLM-5 context management (keep-recent-k=5 + discard-all at 32k); judge o3-mini,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7; self-reported
+BrowseComp-ZH,GLM-5,72.7,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7; self-reported
+tau2-Bench,GLM-5,89.7,dual-control; prompt tweak for Retail and Telecom; Airline uses Claude Opus 4.5 system card fixes; user simulator not stated,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7; self-reported
+MCP-Atlas (Public Set),GLM-5,67.8,500-task public set re-run; judge Gemini 3 Pro; per-task timeout 10 min,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7; self-reported
+Tool-Decathlon,GLM-5,39.2,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7; self-reported
+Terminal-Bench 2.0,GLM-5,56.2,Terminus-2 (60.7 on the verified version with ambiguous instructions fixed),https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7; self-reported
+Terminal-Bench 2.0,GLM-5,56.2,Claude Code (61.1 on verified version),https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7; self-reported
+BrowseComp (no context management),GLM-4.7 (as reported in GLM-5 paper),52.0,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+BrowseComp (w/ context management),GLM-4.7 (as reported in GLM-5 paper),67.5,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+tau2-Bench,GLM-4.7 (as reported in GLM-5 paper),87.4,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+MCP-Atlas (Public),GLM-4.7 (as reported in GLM-5 paper),52.0,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+BrowseComp (no context management),DeepSeek-V3.2 (as reported in GLM-5 paper),51.4,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+BrowseComp (w/ context management),DeepSeek-V3.2 (as reported in GLM-5 paper),67.6,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+tau2-Bench,DeepSeek-V3.2 (as reported in GLM-5 paper),85.3,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+MCP-Atlas (Public),DeepSeek-V3.2 (as reported in GLM-5 paper),62.2,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+BrowseComp (no context management),Kimi K2.5 (as reported in GLM-5 paper),60.6,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+BrowseComp (w/ context management),Kimi K2.5 (as reported in GLM-5 paper),74.9,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+tau2-Bench,Kimi K2.5 (as reported in GLM-5 paper),80.2,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+MCP-Atlas (Public),Kimi K2.5 (as reported in GLM-5 paper),63.8,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+BrowseComp (no context management),Claude Opus 4.5 (as reported in GLM-5 paper),37.0,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+BrowseComp (w/ context management),Claude Opus 4.5 (as reported in GLM-5 paper),57.8,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+tau2-Bench,Claude Opus 4.5 (as reported in GLM-5 paper),91.6,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+MCP-Atlas (Public),Claude Opus 4.5 (as reported in GLM-5 paper),65.2,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+BrowseComp (no context management),Gemini 3 Pro (as reported in GLM-5 paper),37.8,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+BrowseComp (w/ context management),Gemini 3 Pro (as reported in GLM-5 paper),59.2,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+tau2-Bench,Gemini 3 Pro (as reported in GLM-5 paper),90.7,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+MCP-Atlas (Public),Gemini 3 Pro (as reported in GLM-5 paper),66.6,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+BrowseComp (w/ context management),GPT-5.2 (xhigh) (as reported in GLM-5 paper),65.8,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+tau2-Bench,GPT-5.2 (xhigh) (as reported in GLM-5 paper),85.5,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+MCP-Atlas (Public),GPT-5.2 (xhigh) (as reported in GLM-5 paper),68.0,,https://arxiv.org/pdf/2602.15763,GLM-5 paper Table 7 comparison column; self-reported by Z.ai
+BFCL / MCP-Universe / GAIA,GLM-5,not listed,,https://arxiv.org/pdf/2602.15763,"paper has no BFCL, MCP-Universe or GAIA rows"
+PinchBench (OpenClaw agent),"Nemotron 3 Super (120B total, 12B active)",85.6%,full test suite,https://developer.nvidia.com/blog/introducing-nemotron-3-super-an-open-hybrid-mamba-transformer-moe-for-agentic-reasoning,only agentic score in the blog text; self-reported; no comparison numbers
+BFCL / tau2 / BrowseComp / Terminal-Bench 2.0 / MCP / GAIA,Nemotron 3 Super,not listed,,https://developer.nvidia.com/blog/introducing-nemotron-3-super-an-open-hybrid-mamba-transformer-moe-for-agentic-reasoning,"not in the blog text; Figure 3 is an image (accuracy and throughput vs GPT-OSS-120B and Qwen3 122B) whose values I could not read; the Nemotron 3 Super technical report PDF (research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf) was not opened, unconfirmed"
